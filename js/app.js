@@ -68,7 +68,7 @@ var locations = {
 };
 
 var matchups = [
-        new Matchup(artists.andyWilliams, artists.burlIves, locations.noelLA),                      // 0
+        new Matchup(artists.frankSinatra, artists.burlIves, locations.noelLA),                      // 0
         new Matchup(artists.bobbyHelms, artists.jerryVale, locations.noelLA),                       // 1
         new Matchup(artists.andyWilliams, artists.johnDenver, locations.hollyMI),                   // 2
         new Matchup(artists.elvisPresley, artists.tobyKeith, locations.hollyMI),                    // 3
@@ -88,8 +88,8 @@ var matchups = [
 
 $(document).ready(function(){
     matchups.forEach(function(matchup, index){
-        $("#bracket").append(`<div class="matchup" matchup="${index}">${matchup.artist1.name}</div>`);
-        $("#bracket").append(`<div class="matchup" matchup="${index}">${matchup.artist2.name}</div>`);
+        $("#bracket").append(`<div class="matchup" matchup="${index}">${matchup.artist1.seed}. ${matchup.artist1.name}</div>`);
+        $("#bracket").append(`<div class="matchup" matchup="${index}">${matchup.artist2.seed}. ${matchup.artist2.name}</div>`);
         $("#bracket").append("<hr>");
     });
     $(".matchup").click(function(){
