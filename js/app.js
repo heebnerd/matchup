@@ -1,17 +1,19 @@
 class Artist {
     constructor (name, audio, imageUrl, seed){
         this.name = name;
-        this.audio = audio;
-        this.imageUrl = imageUrl;
+        this.audio = "https://open.spotify.com/embed/track/" + audio;
+        this.imageUrl = "images/" + imageUrl;
         this.seed = seed;
     }
 }
 
 class Matchup {
-    constructor (artist1, artist2, location) {
+    constructor (gameNumber, artist1, artist2, location, winnerTo) {
+        this.gameNumber = gameNumber;
         this.artist1 = artist1;
         this.artist2 = artist2;
         this.location = location;
+        this.winnerTo = winnerTo;
     }
 }
 
@@ -21,40 +23,41 @@ class Location {
     }
 }
 
-var artists = {
-    frankSinatra: new Artist("Frank Sinatra", "4KV9bM7a1KDc7b7OakFZic", "frankSinatra.jpg", 1),
-    andyWilliams: new Artist("Andy Williams", "5hslUAKq9I9CG2bAulFkHN", "andyWilliams.jpg", 2),
-    bingCrosby: new Artist("Bing Crosby", "6ajihXpsHpDnIdqtBXZYGN", "bingCrosby.jpg", 3),
-    joshGroban: new Artist("Josh Groban", "1PPunVEmMEPbLxb3ejHgaB", "joshGroban.jpg", 4),
-    perryComo: new Artist("Perry Como", "2pXpURmn6zC5ZYDMms6fwa", "perryComo.jpg", 5),
-    natKingCole: new Artist("Nat King Cole", "1l2CvcIAL1MtPbtZhh0Z77", "natKingCole.jpg", 6),
-    jackJones: new Artist("Jack Jones", "4K6gWgQgOgj291NOhM1yqw", "jackJones.png", 7),
-    barryManilow: new Artist("Barry Manilow", "6StbRiW6YMTHdA8wj5opCG", "barryManilow.jpg", 8),
-    michaelBuble: new Artist("Michael Buble", "1FRqLI971CD1QedTiJeL3c", "michaelBuble.jpg", 9),
-    michaelWSmith: new Artist("Michael W. Smith", "5YRvdslvtxh3aWJcne4Tm2", "michaelWSmith.jpg", 10),
-    johnnyMathis: new Artist("Johnny Mathis", "1JtYy7MFUIZM0MREJaZhTP", "johnnyMathis.jpg", 11),
-    deanMartin: new Artist("Dean Martin", "3szI9hDVbyOYU0yd77G35n", "deanMartin.jpg", 12),
-    harryConnickJr: new Artist("Harry Connick Jr", "0KWdeiXhPKY3VEY56jA238", "harryConnickJr.jpg", 13),
-    tonyBennett: new Artist("Tony Bennett", "1NbkW4qACyJ4MDpqP1kAC5", "tonyBennett.png", 14),
-    elvisPresley: new Artist("Elvis Presley", "3QiAAp20rPC3dcAtKtMaqQ", "elvisPresley.jpg", 15),
-    bobbyHelms: new Artist("Bobby Helms", "7vQbuQcyTflfCIOu3Uzzya", "bobbyHelms.png", 16),
-    jerryVale: new Artist("Jerry Vale", "6R69Gl7CaGihbBpNW5utcZ", "jerryVale.jpg", 17),
-    tobyKeith: new Artist("Toby Keith", "1xmhK20i5Spc261Kvd8XYM", "tobyKeith.jpeg", 18),
-    alanJackson: new Artist("Alan Jackson", "70OrTBlb0RLKNfxWE6fZZM", "alanJackson.jpg", 19),
-    kennyRogers: new Artist("Kenny Rogers", "77lrZDgzDtMZ9nxhofaG2I", "kennyRogers.jpg", 20),
-    bobbyVinton: new Artist("Bobby Vinton", "6mRig6msTgPe8YlTJkrCmy", "bobbyVinton.jpg", 21),
-    garthBrooks: new Artist("Garth Brooks", "", "", 22),
-    alMartino: new Artist("Al Martino", "6zMnsAwmH87MTbzq7IIEYD", "alMartino.jpg", 23),
-    steveLawrence: new Artist("Steve Lawrence", "", "", 24),
-    vicDamone: new Artist("Vic Damone", "6QtoYmkA5Utn3vpZ3QhYEq", "vicDamone.jpg", 25),
-    tomJones: new Artist("Tom Jones", "2BJXVZV3REr0oDvFSD0fnL", "tomJones.jpg", 26),
-    geneAutry: new Artist("Gene Autry", "1dtIaSlyrLI04sqYa8nLyN", "6StbRiW6YMTHdA8wj5opCG", 27),
-    vaughnMonroe: new Artist("Vaughn Monroe", "0GEQ0otjCdvAelfJqGifX1", "vaughnMonroe.jpg", 28),
-    englebertHumperdinck: new Artist("Englebert Humperdinck", "22qUDZhFd9wQM6f4xDPkQl", "englebertHumperdinck.jpg", 29),
-    dariusRucker: new Artist("Darius Rucker", "64kvEILhlkdebBdlrtcMJG", "dariusRucker.jpg", 30),
-    johnDenver: new Artist("John Denver", "03XY86r29H3R5je3xcdb1X", "johnDenver.jpg", 31),
-    burlIves: new Artist("Burl Ives", "33BcB8XVwJU4qB7bDSkVya", "burlIves.jpg", 32)
-};
+var artists = [
+    new Artist("Frank Sinatra", "4KV9bM7a1KDc7b7OakFZic", "frankSinatra.jpg", 1),
+    new Artist("Andy Williams", "5hslUAKq9I9CG2bAulFkHN", "andyWilliams.jpg", 2),
+    new Artist("Bing Crosby", "6ajihXpsHpDnIdqtBXZYGN", "bingCrosby.jpg", 3),
+    new Artist("Josh Groban", "1PPunVEmMEPbLxb3ejHgaB", "joshGroban.jpg", 4),
+    new Artist("Perry Como", "2pXpURmn6zC5ZYDMms6fwa", "perryComo.jpg", 5),
+    new Artist("Nat King Cole", "1l2CvcIAL1MtPbtZhh0Z77", "natKingCole.jpg", 6),
+    new Artist("Jack Jones", "4K6gWgQgOgj291NOhM1yqw", "jackJones.png", 7),
+    new Artist("Barry Manilow", "6StbRiW6YMTHdA8wj5opCG", "barryManilow.jpg", 8),
+    new Artist("Michael Buble", "1FRqLI971CD1QedTiJeL3c", "michaelBuble.jpg", 9),
+    new Artist("Michael W. Smith", "5YRvdslvtxh3aWJcne4Tm2", "michaelWSmith.jpg", 10),
+    new Artist("Johnny Mathis", "1JtYy7MFUIZM0MREJaZhTP", "johnnyMathis.jpg", 11),
+    new Artist("Dean Martin", "3szI9hDVbyOYU0yd77G35n", "deanMartin.jpg", 12),
+    new Artist("Harry Connick Jr", "0KWdeiXhPKY3VEY56jA238", "harryConnickJr.jpg", 13),
+    new Artist("Tony Bennett", "1NbkW4qACyJ4MDpqP1kAC5", "tonyBennett.png", 14),
+    new Artist("Elvis Presley", "3QiAAp20rPC3dcAtKtMaqQ", "elvisPresley.jpg", 15),
+    new Artist("Bobby Helms", "7vQbuQcyTflfCIOu3Uzzya", "bobbyHelms.png", 16),
+    new Artist("Jerry Vale", "6R69Gl7CaGihbBpNW5utcZ", "jerryVale.jpg", 17),
+    new Artist("Toby Keith", "1xmhK20i5Spc261Kvd8XYM", "tobyKeith.jpeg", 18),
+    new Artist("Alan Jackson", "70OrTBlb0RLKNfxWE6fZZM", "alanJackson.jpg", 19),
+    new Artist("Kenny Rogers", "77lrZDgzDtMZ9nxhofaG2I", "kennyRogers.jpg", 20),
+    new Artist("Bobby Vinton", "6mRig6msTgPe8YlTJkrCmy", "bobbyVinton.jpg", 21),
+    new Artist("Chuck Berry", "2pnPe4pJtq7689i5ydzvJJ", "chuckBerry.jpg", 22),
+    new Artist("Al Martino", "6zMnsAwmH87MTbzq7IIEYD", "alMartino.jpg", 23),
+    new Artist("Neil Diamond", "551w3tOvIBhNU49tcak1GZ", "neilDiamond.jpg", 24),
+    new Artist("Jim Nabors", "3u4uVvmJaEtwlqMjSMIVKo", "jimNabors.JPG", 25),
+    new Artist("Tom Jones", "2BJXVZV3REr0oDvFSD0fnL", "tomJones.jpg", 26),
+    new Artist("Gene Autry", "1dtIaSlyrLI04sqYa8nLyN", "geneAutry.jpg", 27),
+    new Artist("Vaughn Monroe", "75Sx3XuVfvyOL9k02ylrA0", "vaughnMonroe.jpg", 28),
+    new Artist("Englebert Humperdinck", "22qUDZhFd9wQM6f4xDPkQl", "englebertHumperdinck.jpg", 29),
+    new Artist("Darius Rucker", "64kvEILhlkdebBdlrtcMJG", "dariusRucker.jpg", 30),
+    new Artist("John Denver", "03XY86r29H3R5je3xcdb1X", "johnDenver.jpg", 31),
+    new Artist("Burl Ives", "33BcB8XVwJU4qB7bDSkVya", "burlIves.jpg", 32),
+    new Artist("---", "", "", "-")
+];
 
 var locations = {
     noelLA: "Noel, LA",
@@ -64,42 +67,141 @@ var locations = {
     northPoleID: "North Pole, ID",
     blitzenOR: "Blitzen, OR",
     bethlehemPA: "Bethlehem, PA",
-    eggnogUT: "Eggnog, UT"
+    eggnogUT: "Eggnog, UT",
+    reindeerMO: "Reindeer, MO",
+    antlersOK: "Antlers, OK",
+    christmasCoveME: "Christmas Cove, ME"
 };
 
 var matchups = [
-        new Matchup(artists.frankSinatra, artists.burlIves, locations.noelLA),                      // 0
-        new Matchup(artists.bobbyHelms, artists.jerryVale, locations.noelLA),                       // 1
-        new Matchup(artists.andyWilliams, artists.johnDenver, locations.hollyMI),                   // 2
-        new Matchup(artists.elvisPresley, artists.tobyKeith, locations.hollyMI),                    // 3
-        new Matchup(artists.bingCrosby, artists.dariusRucker, locations.evergreenCO),               // 4
-        new Matchup(artists.tonyBennett, artists.alanJackson, locations.evergreenCO),               // 5
-        new Matchup(artists.joshGroban, artists.englebertHumperdinck, locations.poinsettiaParkFL),  // 6
-        new Matchup(artists.harryConnickJr, artists.kennyRogers, locations.poinsettiaParkFL),       // 7
-        new Matchup(artists.perryComo, artists.vaughnMonroe, locations.northPoleID),                // 8
-        new Matchup(artists.deanMartin, artists.bobbyVinton, locations.northPoleID),                // 9
-        new Matchup(artists.natKingCole, artists.geneAutry, locations.blitzenOR),                   // 10
-        new Matchup(artists.johnnyMathis, artists.garthBrooks, locations.blitzenOR),                // 11
-        new Matchup(artists.jackJones, artists.tomJones, locations.bethlehemPA),                    // 12
-        new Matchup(artists.michaelWSmith, artists.alMartino, locations.bethlehemPA),               // 13
-        new Matchup(artists.barryManilow, artists.vicDamone, locations.eggnogUT),                   // 14
-        new Matchup(artists.michaelBuble, artists.steveLawrence, locations.eggnogUT)                // 15
+    new Matchup(0, artists[0], artists[31], locations.noelLA, 16),
+    new Matchup(1, artists[15], artists[16], locations.noelLA, 16),
+    new Matchup(2, artists[1], artists[30], locations.hollyMI, 17),
+    new Matchup(3, artists[14], artists[17], locations.hollyMI, 17),
+    new Matchup(4, artists[2], artists[29], locations.evergreenCO, 18),
+    new Matchup(5, artists[13], artists[18], locations.evergreenCO, 18),
+    new Matchup(6, artists[3], artists[28], locations.poinsettiaParkFL, 19),
+    new Matchup(7, artists[12], artists[19], locations.poinsettiaParkFL, 19),
+    new Matchup(8, artists[4], artists[27], locations.northPoleID, 20),
+    new Matchup(9, artists[11], artists[20], locations.northPoleID, 20),
+    new Matchup(10, artists[5], artists[26], locations.blitzenOR, 21),
+    new Matchup(11, artists[10], artists[21], locations.blitzenOR, 21),
+    new Matchup(12, artists[6], artists[25], locations.bethlehemPA, 22),
+    new Matchup(13, artists[9], artists[22], locations.bethlehemPA, 22),
+    new Matchup(14, artists[7], artists[24], locations.eggnogUT, 23),
+    new Matchup(15, artists[8], artists[23], locations.eggnogUT, 23),
+    new Matchup(16, artists[32], artists[32], locations.noelLA, 24),              
+    new Matchup(17, artists[32], artists[32], locations.hollyMI, 24),              
+    new Matchup(18, artists[32], artists[32], locations.evergreenCO, 25),              
+    new Matchup(19, artists[32], artists[32], locations.poinsettiaParkFL, 25),              
+    new Matchup(20, artists[32], artists[32], locations.northPoleID, 26),              
+    new Matchup(21, artists[32], artists[32], locations.blitzenOR, 26),              
+    new Matchup(22, artists[32], artists[32], locations.bethlehemPA, 27),              
+    new Matchup(23, artists[32], artists[32], locations.eggnogUT, 27),              
+    new Matchup(24, artists[32], artists[32], locations.reindeerMO, 28),              
+    new Matchup(25, artists[32], artists[32], locations.reindeerMO, 28),              
+    new Matchup(26, artists[32], artists[32], locations.antlersOK, 29),              
+    new Matchup(27, artists[32], artists[32], locations.antlersOK, 29),              
+    new Matchup(28, artists[32], artists[32], locations.reindeerMO, 30),              
+    new Matchup(29, artists[32], artists[32], locations.antlersOK, 30),              
+    new Matchup(30, artists[32], artists[32], locations.christmasCoveME, null)
 ];
 
 $(document).ready(function(){
-    matchups.forEach(function(matchup, index){
-        $("#bracket").append(`<div class="matchup" matchup="${index}">${matchup.artist1.seed}. ${matchup.artist1.name}</div>`);
-        $("#bracket").append(`<div class="matchup" matchup="${index}">${matchup.artist2.seed}. ${matchup.artist2.name}</div>`);
-        $("#bracket").append("<hr>");
+    refreshBracket();
+    $(".btn-winner").click(function(){
+        var gameNumber = $(this).attr("data-matchup");
+        var winnerTo = $(this).attr("data-winner");
+        var artistName = $(this).attr("data-artist");
+        var artist = artists.find(function(artist){
+            return artist.name == artistName;
+        });
+        var matchup = matchups.find(function(matchup){
+            return matchup.gameNumber === parseInt(winnerTo);
+        });
+        if(matchup.artist1 == artists[32])
+            matchup.artist1 = artist;
+        else   
+            matchup.artist2 = artist;
+        refreshMatchup(matchup);
+        $("#matchupModal").modal("hide");
     });
-    $(".matchup").click(function(){
-        var matchup = matchups[$(this).attr("matchup")];
-        displayMatchup(matchup);
-        $("#matchupModal").modal("show");
-    });
+
 });
 
+function refreshBracket(){
+    matchups.forEach(function(matchup, index){
+        if(matchup.artist1 && matchup.artist2){  
+            console.log(matchup);
+            if(index < 16){
+                $(".first-round").append(`<div matchup="${index}" class="game">
+                    <div class="artist1">
+                        <span class="seed">${matchup.artist1.seed}</span>
+                        <span class="name">${matchup.artist1.name}</span>
+                    </div>
+                    <div class="artist2">
+                        <span class="seed">${matchup.artist2.seed}</span>
+                        <span class="name">${matchup.artist2.name}</span>
+                    </div>
+                </div>`);
+            }
+            else if(index < 24){
+                $(".second-round").append(`<div matchup="${index}" class="game">
+                    <div class="artist1">
+                        <span class="seed">${matchup.artist1.seed}</span>
+                        <span class="name">${matchup.artist1.name}</span>
+                    </div>
+                    <div class="artist2">
+                        <span class="seed">${matchup.artist2.seed}</span>
+                        <span class="name">${matchup.artist2.name}</span>
+                    </div>
+                </div>`);
+            }
+            else if(index < 28){
+                $(".third-round").append(`<div matchup="${index}" class="game">
+                    <div class="artist1">
+                        <span class="seed">${matchup.artist1.seed}</span>
+                        <span class="name">${matchup.artist1.name}</span>
+                    </div>
+                    <div class="artist2">
+                        <span class="seed">${matchup.artist2.seed}</span>
+                        <span class="name">${matchup.artist2.name}</span>
+                    </div>
+                </div>`);
+            }
+            else if(index < 30){
+                $(".fourth-round").append(`<div matchup="${index}" class="game">
+                    <div class="artist1">
+                        <span class="seed">${matchup.artist1.seed}</span>
+                        <span class="name">${matchup.artist1.name}</span>
+                    </div>
+                    <div class="artist2">
+                        <span class="seed">${matchup.artist2.seed}</span>
+                        <span class="name">${matchup.artist2.name}</span>
+                    </div>
+                </div>`);
+            }
+        }
+    });
 
+    $(".game").click(function(){
+        var matchup = matchups[$(this).attr("matchup")];
+        if(matchup.artist1 != artists[32] && matchup.artist2 != artists[32])
+        {
+            displayMatchup(matchup);
+            $("#matchupModal button").attr("data-matchup", matchup.gameNumber);
+            $("#matchupModal button").attr("data-winner", matchup.winnerTo);
+            $("#matchupModal").modal("show");
+        }
+    });
+}
+
+function refreshMatchup(matchup){
+    $(`div[matchup="${matchup.gameNumber}"] .artist1 .seed`).text(matchup.artist1.seed);
+    $(`div[matchup="${matchup.gameNumber}"] .artist1 .name`).text(matchup.artist1.name);
+    $(`div[matchup="${matchup.gameNumber}"] .artist2 .seed`).text(matchup.artist2.seed);
+    $(`div[matchup="${matchup.gameNumber}"] .artist2 .name`).text(matchup.artist2.name);
+}
 
 function displayMatchup(matchup){
     displayArtist("left", matchup.artist1);
@@ -109,6 +211,7 @@ function displayMatchup(matchup){
 function displayArtist(selector, artist){
     selector = "#" + selector + "Artist";
     $(selector + " .header").text(artist.name);
-    $(selector + " .image img").attr("src", "images/" + artist.imageUrl);
-    $(selector + " iframe").attr("src", "https://open.spotify.com/embed/track/" + artist.audio);
+    $(selector + " .image img").attr("src", artist.imageUrl);
+    $(selector + " iframe").attr("src", artist.audio);
+    $(selector + " button").attr("data-artist", artist.name);
 }

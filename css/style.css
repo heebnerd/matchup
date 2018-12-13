@@ -8,6 +8,10 @@ html, body{
     text-align: center;
 }
 
+.artist1{
+    margin-bottom: 4px;
+}
+
 .header{
     padding-top: 10%;
     text-align: center;
@@ -47,3 +51,76 @@ html, body{
     color: black;
     background-color: gold;
 }
+
+.game img{
+    height: 42px;
+}
+
+.game .name{
+    font-size: 20pt;
+}
+
+.game .seed{
+    font-size: 20pt;
+    min-width: 36px;
+    display: inline-block;
+    text-align: center;
+    background-color: darkblue;
+    color: white;
+    border-radius: 20px;
+}
+
+.game img{
+    min-width: 36px;
+}
+
+.game{
+    min-height: 100px;
+    width: 345px;
+    padding-left: 6px;
+    padding-top: 10px;
+    margin-bottom: 10px;
+}
+
+.game > div{
+    background-color: lightgray;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.round{
+    display: inline-block;
+    position: absolute;
+}
+
+.second-round{
+    left: 350px;
+    top: 56px;
+}
+
+.second-round .game{
+    margin-bottom: 120px;
+}
+
+.third-round{
+    left: 700px;
+    top: 170px;
+}
+
+.third-round .game{
+    margin-bottom: 338px;
+}
+
+.fourth-round{
+    left: 1050px;
+    top: 390px;
+}
+
+.fourth-round .game{
+    margin-bottom: 770px;
+}
+
+.final-round{
+    left: 1050px;
+}
+
