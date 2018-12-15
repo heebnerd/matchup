@@ -107,6 +107,7 @@ var matchups = [
     new Matchup(30, artists[32], artists[32], locations.christmasCoveME, null)
 ];
 
+
 $(document).ready(function(){
     refreshBracket();
     $(".btn-winner").click(function(){
@@ -126,7 +127,6 @@ $(document).ready(function(){
         refreshMatchup(matchup);
         $("#matchupModal").modal("hide");
     });
-
 });
 
 function refreshBracket(){
@@ -180,6 +180,19 @@ function refreshBracket(){
                         <span class="name">${matchup.artist2.name}</span>
                     </div>
                 </div>`);
+            }
+            else{
+                $(".final-round").append(`<div matchup="${index}" class="game">
+                    <div class="artist1">
+                        <span class="seed">${matchup.artist1.seed}</span>
+                        <span class="name">${matchup.artist1.name}</span>
+                    </div>
+                    <div class="artist2">
+                        <span class="seed">${matchup.artist2.seed}</span>
+                        <span class="name">${matchup.artist2.name}</span>
+                    </div>
+                </div>`);
+
             }
         }
     });
