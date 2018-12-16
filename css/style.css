@@ -41,6 +41,10 @@ html, body{
     box-shadow: 2px;
 }
 
+#winnerModal .image {
+    padding-top: 0;
+}
+
 .modal-lg{
     min-width: 90vw;
 }
@@ -147,4 +151,16 @@ html, body{
 
 #location img{
     width: 120px;
+}
+
+#winnerModal h1{
+    animation:blinkingText 1.0s infinite;
+    font-size: 60pt;
+}
+@keyframes blinkingText{
+    0%{     color: #FFF;    }
+    49%{    color: #FFF; }
+    50%{    color: transparent; }
+    99%{    color:#FFF;  }
+    100%{   color: #FFF;    }
 }
