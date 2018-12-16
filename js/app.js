@@ -1,9 +1,10 @@
 class Artist {
-    constructor (name, audio, imageUrl, seed){
+    constructor (name, audio, imageUrl, seed, gagAudio){
         this.name = name;
         this.audio = "https://open.spotify.com/embed/track/" + audio;
         this.imageUrl = "images/" + imageUrl;
         this.seed = seed;
+        this.gagAudio = "audio/" + gagAudio;
     }
 }
 
@@ -18,8 +19,9 @@ class Matchup {
 }
 
 class Location {
-    constructor (location){
-        this.location = location;
+    constructor (name, imageUrl){
+        this.name = name;
+        this.imageUrl = "images/" + imageUrl;
     }
 }
 
@@ -30,7 +32,7 @@ var artists = [
     new Artist("Josh Groban", "1PPunVEmMEPbLxb3ejHgaB", "joshGroban.jpg", 4),
     new Artist("Perry Como", "2pXpURmn6zC5ZYDMms6fwa", "perryComo.jpg", 5),
     new Artist("Nat King Cole", "1l2CvcIAL1MtPbtZhh0Z77", "natKingCole.jpg", 6),
-    new Artist("Jack Jones", "4K6gWgQgOgj291NOhM1yqw", "jackJones.png", 7),
+    new Artist("Jack Jones", "4K6gWgQgOgj291NOhM1yqw", "jackJones.png", 7, "loveboat.m4a"),
     new Artist("Barry Manilow", "6StbRiW6YMTHdA8wj5opCG", "barryManilow.jpg", 8),
     new Artist("Michael Buble", "1FRqLI971CD1QedTiJeL3c", "michaelBuble.jpg", 9),
     new Artist("Michael W. Smith", "5YRvdslvtxh3aWJcne4Tm2", "michaelWSmith.jpg", 10),
@@ -60,17 +62,17 @@ var artists = [
 ];
 
 var locations = {
-    noelLA: "Noel, LA",
-    hollyMI: "Holly, MI",
-    evergreenCO: "Evergreen, CO",
-    poinsettiaParkFL: "Poinsettia Park, FL",
-    northPoleID: "North Pole, ID",
-    blitzenOR: "Blitzen, OR",
-    bethlehemPA: "Bethlehem, PA",
-    eggnogUT: "Eggnog, UT",
-    reindeerMO: "Reindeer, MO",
-    antlersOK: "Antlers, OK",
-    christmasCoveME: "Christmas Cove, ME"
+    noelLA: new Location("Noel, LA", "noelLA.png"),
+    hollyMI: new Location("Holly, MI", "hollyMI.png"),
+    evergreenCO: new Location("Evergreen, CO", "evergreenCO.png"),
+    poinsettiaParkFL: new Location("Poinsettia Park, FL", "poinsettiaParkFL.png"),
+    northPoleID: new Location("North Pole, ID", "northPoleID.png"),
+    blitzenOR: new Location("Blitzen, OR", "blitzenOR.png"),
+    bethlehemPA: new Location("Bethlehem, PA", "bethlehemPA.png"),
+    eggnogUT: new Location("Eggnog, UT", "eggnogUT.png"),
+    reindeerMO: new Location("Reindeer, MO", "reindeerMO.png"),
+    antlersOK: new Location("Antlers, OK", "antlersOK.png"),
+    christmasCoveME: new Location("Christmas Cove, ME", "christmasCoveME.png")
 };
 
 var matchups = [
@@ -125,6 +127,7 @@ $(document).ready(function(){
         else   
             matchup.artist2 = artist;
         refreshMatchup(matchup);
+        $("#matchupModal iframe").attr("src", "");
         $("#matchupModal").modal("hide");
     });
 });
@@ -219,12 +222,23 @@ function refreshMatchup(matchup){
 function displayMatchup(matchup){
     displayArtist("left", matchup.artist1);
     displayArtist("right", matchup.artist2);
+    $("#location h3").text(matchup.location.name);
+    $("#location img").attr("src", matchup.location.imageUrl);
 }
 
 function displayArtist(selector, artist){
     selector = "#" + selector + "Artist";
     $(selector + " .header").text(artist.name);
     $(selector + " .image img").attr("src", artist.imageUrl);
+    $(selector + " .image img").attr("artist-name", artist.name);
+    $(selector + " .image img").on("click", function(){
+        var artistName = $(this).attr("artist-name");
+        var artist = artists.find(function(artist){
+            return artist.name == artistName;
+        });
+        var audio = new Audio(artist.gagAudio); 
+        audio.play();
+    });
     $(selector + " iframe").attr("src", artist.audio);
     $(selector + " button").attr("data-artist", artist.name);
 }

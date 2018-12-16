@@ -13,8 +13,6 @@
         // Warning before leaving the page (back button, or outgoinglink)
         window.onbeforeunload = function() {
             return "Do you really want to leave our brilliant application?";
-            //if we return nothing here (just calling return;) then there will be no pop-up question at all
-            //return;
         };
     </script>
     <div id="bracket">
@@ -43,6 +41,10 @@
                                     data-matchup="" 
                                     data-winner=""
                                     data-artist="">Winner</button>
+                            </div>
+                            <div id="location">
+                                <img src="">
+                                <h3></h3>
                             </div>
                             <div id="rightArtist" class="col artist p-5">
                                 <div class="image">

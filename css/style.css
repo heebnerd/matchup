@@ -10,6 +10,11 @@ html, body{
 
 .artist1{
     margin-bottom: 4px;
+    cursor: pointer;
+}
+
+.artist2{
+    cursor: pointer;
 }
 
 .header{
@@ -95,11 +100,11 @@ html, body{
 
 .second-round{
     left: 350px;
-    top: 56px;
 }
 
 .second-round .game{
-    margin-bottom: 120px;
+    height: 212px;
+    padding-top: 64px;
 }
 
 .third-round{
@@ -125,3 +130,21 @@ html, body{
     top: 826px;
 }
 
+#location{
+    position: absolute;
+    background-color: white;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 15px;
+    left: 50%;
+    top: 50%;
+    z-index: 9;
+    box-shadow: 2px 2px;
+    font-size: 17pt;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+#location img{
+    width: 120px;
+}
