@@ -106,7 +106,7 @@ var matchups = [
     new Matchup(27, artists[32], artists[32], locations.antlersOK, 29),              
     new Matchup(28, artists[32], artists[32], locations.reindeerMO, 30),              
     new Matchup(29, artists[32], artists[32], locations.antlersOK, 30),              
-    new Matchup(30, artists[1], artists[1], locations.christmasCoveME, null)
+    new Matchup(30, artists[32], artists[32], locations.christmasCoveME, null)
 ];
 
 
