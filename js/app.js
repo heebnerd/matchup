@@ -26,7 +26,7 @@ class Location {
 }
 
 var artists = [
-    new Artist("Frank Sinatra", "4KV9bM7a1KDc7b7OakFZic", "frankSinatra.jpg", 1),
+    new Artist("Frank Sinatra", "4HEOgBHRCExyYVeTyrXsnL", "frankSinatra.jpg", 1),
     new Artist("Andy Williams", "5hslUAKq9I9CG2bAulFkHN", "andyWilliams.jpg", 2),
     new Artist("Bing Crosby", "6ajihXpsHpDnIdqtBXZYGN", "bingCrosby.jpg", 3),
     new Artist("Josh Groban", "1PPunVEmMEPbLxb3ejHgaB", "joshGroban.jpg", 4),
@@ -78,20 +78,22 @@ var locations = {
 var matchups = [
     new Matchup(0, artists[0], artists[31], locations.noelLA, 16),
     new Matchup(1, artists[15], artists[16], locations.noelLA, 16),
-    new Matchup(2, artists[1], artists[30], locations.hollyMI, 17),
-    new Matchup(3, artists[14], artists[17], locations.hollyMI, 17),
-    new Matchup(4, artists[2], artists[29], locations.evergreenCO, 18),
-    new Matchup(5, artists[13], artists[18], locations.evergreenCO, 18),
-    new Matchup(6, artists[3], artists[28], locations.poinsettiaParkFL, 19),
-    new Matchup(7, artists[12], artists[19], locations.poinsettiaParkFL, 19),
-    new Matchup(8, artists[4], artists[27], locations.northPoleID, 20),
-    new Matchup(9, artists[11], artists[20], locations.northPoleID, 20),
-    new Matchup(10, artists[5], artists[26], locations.blitzenOR, 21),
-    new Matchup(11, artists[10], artists[21], locations.blitzenOR, 21),
-    new Matchup(12, artists[6], artists[25], locations.bethlehemPA, 22),
-    new Matchup(13, artists[9], artists[22], locations.bethlehemPA, 22),
-    new Matchup(14, artists[7], artists[24], locations.eggnogUT, 23),
-    new Matchup(15, artists[8], artists[23], locations.eggnogUT, 23),
+    new Matchup(2, artists[7], artists[24], locations.hollyMI, 17),
+    new Matchup(3, artists[8], artists[23], locations.hollyMI, 17),
+    new Matchup(4, artists[3], artists[28], locations.evergreenCO, 18),
+    new Matchup(5, artists[12], artists[19], locations.evergreenCO, 18),
+    new Matchup(6, artists[4], artists[27], locations.poinsettiaParkFL, 19),
+    new Matchup(7, artists[11], artists[20], locations.poinsettiaParkFL, 19),
+    
+    new Matchup(8, artists[1], artists[30], locations.northPoleID, 20),
+    new Matchup(9, artists[14], artists[17], locations.northPoleID, 20),
+    new Matchup(10, artists[6], artists[25], locations.blitzenOR, 21),
+    new Matchup(11, artists[9], artists[22], locations.blitzenOR, 21),
+    new Matchup(12, artists[2], artists[29], locations.bethlehemPA, 22),
+    new Matchup(13, artists[13], artists[18], locations.bethlehemPA, 22),
+    new Matchup(14, artists[5], artists[26], locations.eggnogUT, 23),
+    new Matchup(15, artists[10], artists[21], locations.eggnogUT, 23),
+    
     new Matchup(16, artists[32], artists[32], locations.noelLA, 24),              
     new Matchup(17, artists[32], artists[32], locations.hollyMI, 24),              
     new Matchup(18, artists[32], artists[32], locations.evergreenCO, 25),              
@@ -109,34 +111,36 @@ var matchups = [
     new Matchup(30, artists[32], artists[32], locations.christmasCoveME, null)
 ];
 
-
 $(document).ready(function(){
     refreshBracket();
-    $(".btn-winner").click(function(){
-        var gameNumber = $(this).attr("data-matchup");
-        var winnerTo = $(this).attr("data-winner");
-        var artistName = $(this).attr("data-artist");
-        var artist = artists.find(function(artist){
-            return artist.name == artistName;
-        });
-        if(winnerTo) {
-            var matchup = matchups.find(function(matchup){
-                return matchup.gameNumber === parseInt(winnerTo);
-            });
-            if(matchup.artist1 == artists[32])
-                matchup.artist1 = artist;
-            else   
-                matchup.artist2 = artist;
-            refreshMatchup(matchup);
-            $("#matchupModal iframe").attr("src", "");
-            $("#matchupModal").modal("hide");
-
-        }
-        else {
-            declareWinner(artist);
-        }
-    });
+    $(".btn-winner").click(pickWinner);
 });
+
+function pickWinner(){
+    var gameNumber = $(this).attr("data-matchup");
+    var winnerTo = $(this).attr("data-winner");
+    var artistName = $(this).attr("data-artist");
+    var artist = artists.find(function(artist){
+        return artist.name == artistName;
+    });
+    if(winnerTo) {
+        var matchup = matchups.find(function(matchup){
+            return matchup.gameNumber === parseInt(winnerTo);
+        });
+        if(matchup.artist1 == artists[32])
+            matchup.artist1 = artist;
+        else   
+            matchup.artist2 = artist;
+        refreshMatchup(matchup);
+        $("#matchupModal iframe").attr("src", "");
+        $(`div [matchup='${gameNumber}']`).attr("picked", "true");
+        $("#matchupModal").modal("hide");
+    }
+    else {
+        declareWinner(artist);
+    }
+
+}
 
 function declareWinner(artist){
     $("#winnerModal .header").text(artist.name);
@@ -149,62 +153,89 @@ function refreshBracket(){
         if(matchup.artist1 && matchup.artist2){  
             console.log(matchup);
             if(index < 16){
-                $(".first-round").append(`<div matchup="${index}" class="game">
-                    <div class="artist1">
-                        <span class="seed">${matchup.artist1.seed}</span>
-                        <span class="name">${matchup.artist1.name}</span>
-                    </div>
-                    <div class="artist2">
-                        <span class="seed">${matchup.artist2.seed}</span>
-                        <span class="name">${matchup.artist2.name}</span>
+                $(".first-round").append(`
+                <div matchup="${index}" class="game">
+                    <div class="artists">
+                        <div class="artist1">
+                            <span class="seed">${matchup.artist1.seed}</span>
+                            <span class="name">${matchup.artist1.name}</span>
+                        </div>
+                        <div class="artist2">
+                            <span class="seed">${matchup.artist2.seed}</span>
+                            <span class="name">${matchup.artist2.name}</span>
+                        </div>
                     </div>
                 </div>`);
             }
             else if(index < 24){
-                $(".second-round").append(`<div matchup="${index}" class="game">
-                    <div class="artist1">
-                        <span class="seed">${matchup.artist1.seed}</span>
-                        <span class="name">${matchup.artist1.name}</span>
+                $(".second-round").append(`     
+                <div matchup="${index}" class="game">    
+                    <div>  
+                        <div class="bracket"></div>
                     </div>
-                    <div class="artist2">
-                        <span class="seed">${matchup.artist2.seed}</span>
-                        <span class="name">${matchup.artist2.name}</span>
+                    <div class="artists">
+                        <div class="artist1">
+                            <span class="seed">${matchup.artist1.seed}</span>
+                            <span class="name">${matchup.artist1.name}</span>
+                        </div>
+                        <div class="artist2">
+                            <span class="seed">${matchup.artist2.seed}</span>
+                            <span class="name">${matchup.artist2.name}</span>
+                        </div> 
                     </div>
                 </div>`);
             }
             else if(index < 28){
-                $(".third-round").append(`<div matchup="${index}" class="game">
-                    <div class="artist1">
-                        <span class="seed">${matchup.artist1.seed}</span>
-                        <span class="name">${matchup.artist1.name}</span>
+                $(".third-round").append(`
+                <div matchup="${index}" class="game">
+                    <div>  
+                        <div class="bracket"></div>
                     </div>
-                    <div class="artist2">
-                        <span class="seed">${matchup.artist2.seed}</span>
-                        <span class="name">${matchup.artist2.name}</span>
+                    <div class="artists">
+                        <div class="artist1">
+                            <span class="seed">${matchup.artist1.seed}</span>
+                            <span class="name">${matchup.artist1.name}</span>
+                        </div>
+                        <div class="artist2">
+                            <span class="seed">${matchup.artist2.seed}</span>
+                            <span class="name">${matchup.artist2.name}</span>
+                        </div>
                     </div>
                 </div>`);
             }
             else if(index < 30){
-                $(".fourth-round").append(`<div matchup="${index}" class="game">
-                    <div class="artist1">
-                        <span class="seed">${matchup.artist1.seed}</span>
-                        <span class="name">${matchup.artist1.name}</span>
+                $(".fourth-round").append(`
+                <div matchup="${index}" class="game">
+                    <div>  
+                        <div class="bracket"></div>
                     </div>
-                    <div class="artist2">
-                        <span class="seed">${matchup.artist2.seed}</span>
-                        <span class="name">${matchup.artist2.name}</span>
+                    <div class="artists">
+                        <div class="artist1">
+                            <span class="seed">${matchup.artist1.seed}</span>
+                            <span class="name">${matchup.artist1.name}</span>
+                        </div>
+                        <div class="artist2">
+                            <span class="seed">${matchup.artist2.seed}</span>
+                            <span class="name">${matchup.artist2.name}</span>
+                        </div>
                     </div>
                 </div>`);
             }
             else{
-                $(".final-round").append(`<div matchup="${index}" class="game">
-                    <div class="artist1">
-                        <span class="seed">${matchup.artist1.seed}</span>
-                        <span class="name">${matchup.artist1.name}</span>
+                $(".final-round").append(`
+                <div matchup="${index}" class="game">
+                    <div>  
+                        <div class="bracket"></div>
                     </div>
-                    <div class="artist2">
-                        <span class="seed">${matchup.artist2.seed}</span>
-                        <span class="name">${matchup.artist2.name}</span>
+                    <div class="artists">
+                        <div class="artist1">
+                            <span class="seed">${matchup.artist1.seed}</span>
+                            <span class="name">${matchup.artist1.name}</span>
+                        </div>
+                        <div class="artist2">
+                            <span class="seed">${matchup.artist2.seed}</span>
+                            <span class="name">${matchup.artist2.name}</span>
+                        </div>
                     </div>
                 </div>`);
 
@@ -214,7 +245,10 @@ function refreshBracket(){
 
     $(".game").click(function(){
         var matchup = matchups[$(this).attr("matchup")];
-        if(matchup.artist1 != artists[32] && matchup.artist2 != artists[32])
+        var picked = $(this).attr("picked");
+        if(!picked
+            && matchup.artist1 != artists[32] 
+            && matchup.artist2 != artists[32])
         {
             displayMatchup(matchup);
             $("#matchupModal button").attr("data-matchup", matchup.gameNumber);

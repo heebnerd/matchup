@@ -1,5 +1,6 @@
 html, body{
     height: 100%;
+    background-color: #272A33;
 }
 
 .artist{
@@ -8,13 +9,27 @@ html, body{
     text-align: center;
 }
 
+#rightArtist{
+    border-left: 5px solid #ffffff;
+}
+
+#leftArtist{
+    border-right: 5px solid #ffffff;
+}
+
 .artist1{
     margin-bottom: 4px;
     cursor: pointer;
+    border-top-right-radius: 6px;
+    background-color: #58595E;
+    color: white;
 }
 
 .artist2{
     cursor: pointer;
+    border-bottom-right-radius: 6px;
+    background-color: #58595E;
+    color: white;
 }
 
 .header{
@@ -66,17 +81,25 @@ html, body{
 }
 
 .game .name{
-    font-size: 20pt;
+    font-size: 16pt;
+    text-shadow: 1px 1px #999;
+    padding-left: 10px;
 }
 
 .game .seed{
-    font-size: 20pt;
+    font-size: 16pt;
     min-width: 36px;
     display: inline-block;
     text-align: center;
-    background-color: darkblue;
-    color: white;
-    border-radius: 20px;
+    background-color: #999;
+    color: #333;
+}
+
+.game .artist1 .seed{
+    border-top-left-radius: 6px;
+}
+.game .artist2 .seed{
+    border-bottom-left-radius: 6px;
 }
 
 .game img{
@@ -84,17 +107,28 @@ html, body{
 }
 
 .game{
-    min-height: 100px;
-    width: 345px;
     padding-left: 6px;
     padding-top: 10px;
     margin-bottom: 10px;
 }
 
-.game > div{
-    background-color: lightgray;
-    border-top-left-radius: 20px;
-    border-bottom-left-radius: 20px;
+.game > div {
+    display: table-cell;
+}
+
+.game .artists{
+    width: 300px;
+    padding-left: 10px;
+    vertical-align: top;
+}
+
+
+.bracket{
+    color: white;
+    display: inline-block;
+    border-top: 2px solid white;
+    border-right: 2px solid white;
+    border-bottom: 2px solid white;
 }
 
 .round{
@@ -103,47 +137,76 @@ html, body{
 }
 
 .second-round{
-    left: 350px;
+    left: 305px;
 }
 
 .second-round .game{
-    height: 212px;
-    padding-top: 64px;
+    height: 162px;
+    padding-top: 44px;
+}
+.second-round .bracket{
+    height: 86px;
+    width: 6px;
+}
+.second-round .artists{
+    padding-top: 10px;
 }
 
 .third-round{
-    left: 700px;
-    top: 170px;
+    left: 620px;
+    top: 78px;
 }
 
 .third-round .game{
-    margin-bottom: 338px;
+    margin-bottom: 158px;
+}
+
+.third-round .bracket{
+    height: 170px;
+    width: 6px;
+}
+.third-round .artists{
+    padding-top: 52px;
 }
 
 .fourth-round{
-    left: 1050px;
-    top: 390px;
+    left: 934px;
+    top: 162px;
 }
 
 .fourth-round .game{
-    margin-bottom: 770px;
+    margin-bottom: 324px;
+}
+.fourth-round .bracket{
+    height: 348px;
+    width: 6px;
+}
+.fourth-round .artists{
+    padding-top: 136px;
 }
 
 .final-round{
-    left: 1400px;
-    top: 826px;
+    left: 1246px;
+    top: 330px;
+}
+
+.final-round .bracket{
+    height: 690px;
+    width: 6px;
+}
+.final-round .artists{
+    padding-top: 314px;
 }
 
 #location{
     position: absolute;
     background-color: white;
     padding: 20px;
-    border: 2px solid black;
     border-radius: 15px;
     left: 50%;
     top: 50%;
     z-index: 9;
-    box-shadow: 2px 2px;
+    box-shadow: 2px 2px #ffffff;
     font-size: 17pt;
     transform: translate(-50%, -50%);
     text-align: center;
