@@ -216,10 +216,21 @@ html, body{
     width: 120px;
 }
 
+#winnerModal .modal-lg{
+    min-width: 70vw;
+}
+
+#winnerModal .header{
+    padding-top: 2%;
+    text-align: center;
+    font-size: 10vh;
+}
+
 #winnerModal h1{
     animation:blinkingText 1.0s infinite;
     font-size: 60pt;
 }
+
 @keyframes blinkingText{
     0%{     color: #FFF;    }
     49%{    color: #FFF; }

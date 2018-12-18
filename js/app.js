@@ -108,7 +108,7 @@ var matchups = [
     new Matchup(27, artists[32], artists[32], locations.antlersOK, 29),              
     new Matchup(28, artists[32], artists[32], locations.reindeerMO, 30),              
     new Matchup(29, artists[32], artists[32], locations.antlersOK, 30),              
-    new Matchup(30, artists[32], artists[32], locations.christmasCoveME, null)
+    new Matchup(30, artists[0], artists[1], locations.christmasCoveME, null)
 ];
 
 $(document).ready(function(){
@@ -123,6 +123,8 @@ function pickWinner(){
     var artist = artists.find(function(artist){
         return artist.name == artistName;
     });
+
+    $("#matchupModal iframe").attr("src", "");
     if(winnerTo) {
         var matchup = matchups.find(function(matchup){
             return matchup.gameNumber === parseInt(winnerTo);
@@ -137,14 +139,15 @@ function pickWinner(){
         $("#matchupModal").modal("hide");
     }
     else {
+        $("#matchupModal").modal("hide");
         declareWinner(artist);
     }
-
 }
 
 function declareWinner(artist){
     $("#winnerModal .header").text(artist.name);
     $("#winnerModal img").attr("src", artist.imageUrl);
+    $("#winnerModal iframe").attr("src", artist.audio);
     $("#winnerModal").modal("show");
 }
 
