@@ -50,7 +50,7 @@ var artists = [
     new Artist("Chuck Berry", "2pnPe4pJtq7689i5ydzvJJ", "chuckBerry.jpg", 22),
     new Artist("Al Martino", "6zMnsAwmH87MTbzq7IIEYD", "alMartino.jpg", 23),
     new Artist("Neil Diamond", "551w3tOvIBhNU49tcak1GZ", "neilDiamond.jpg", 24),
-    new Artist("Jim Nabors", "3u4uVvmJaEtwlqMjSMIVKo", "jimNabors.JPG", 25),
+    new Artist("Jim Nabors", "3u4uVvmJaEtwlqMjSMIVKo", "jimNabors.JPG", 25, "gawlee.m4a"),
     new Artist("Tom Jones", "2BJXVZV3REr0oDvFSD0fnL", "tomJones.jpg", 26),
     new Artist("Gene Autry", "1dtIaSlyrLI04sqYa8nLyN", "geneAutry.jpg", 27),
     new Artist("Vaughn Monroe", "75Sx3XuVfvyOL9k02ylrA0", "vaughnMonroe.jpg", 28),
@@ -108,7 +108,7 @@ var matchups = [
     new Matchup(27, artists[32], artists[32], locations.antlersOK, 29),              
     new Matchup(28, artists[32], artists[32], locations.reindeerMO, 30),              
     new Matchup(29, artists[32], artists[32], locations.antlersOK, 30),              
-    new Matchup(30, artists[0], artists[1], locations.christmasCoveME, null)
+    new Matchup(30, artists[32], artists[32], locations.christmasCoveME, null)
 ];
 
 $(document).ready(function(){
