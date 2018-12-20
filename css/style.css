@@ -63,6 +63,9 @@ html, body{
 .modal-lg{
     min-width: 90vw;
 }
+.modal-md{
+    min-width: 50vw;
+}
 
 .btn-winner{
     border: 1px solid white;
@@ -134,6 +137,10 @@ html, body{
 .round{
     display: inline-block;
     position: absolute;
+} 
+
+.first-round .bracket{
+    display: none;
 }
 
 .second-round{
@@ -210,6 +217,12 @@ html, body{
     font-size: 17pt;
     transform: translate(-50%, -50%);
     text-align: center;
+    transition: all 1s ease;
+}
+
+#location.expand{
+    min-width: 400px;
+    min-height: 400px;
 }
 
 #location img{
@@ -237,4 +250,29 @@ html, body{
     50%{    color: transparent; }
     99%{    color:#FFF;  }
     100%{   color: #FFF;    }
+}
+
+.btn.btn-delete{
+    float: right;
+    width: 4px;
+    background-color: #780000;
+    height: 100%;
+    padding: 0;
+    height: 32px;
+    font-size: 14pt;
+    transition: all 0.5s ease;
+}
+
+.btn.btn-delete.show{
+    width: 32px;
+    color: white;
+    line-height: 1.6;
+}
+
+.btn.btn-delete.show::after{
+    content: 'X';
+}
+
+.first-round .btn-delete{
+    display: none;
 }
