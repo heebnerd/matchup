@@ -125,9 +125,10 @@ var locationDetails = {
             "Likely named for the egg nog served to stockmen at this place",
             "Elevation is 4,445 ft"
         ]),
-    reindeerMO: new LocationDetails("", "", 
+    santaClausIN: new LocationDetails("locationSantaClausIN.jpg", "2,411", 
         [
-
+            "Named in 1849. Wanted to be called Santa Fe, no one really knows how they got call Santa Claus",
+            "Birthplace of Jay Cutler"
         ]),
     antlersOK: new LocationDetails("locationAntlersOK.jpg", "2,453", 
         [
@@ -149,7 +150,7 @@ var locations = {
     blitzenOR: new Location("Blitzen, OR", "blitzenOR.png", "Cindy Lou from Whoville Theatre, featuring the Russian Teacakes Room", locationDetails.blitzenOR),
     bethlehemPA: new Location("Bethlehem, PA", "bethlehemPA.png", "Cousin Eddie’s Palace Auditorium", locationDetails.bethlehemPA),
     eggnogUT: new Location("Eggnog, UT", "eggnogUT.png", "The Kris Kringle Music Hall", locationDetails.eggnogUT),
-    reindeerMO: new Location("Reindeer, MO", "reindeerMO.png"),
+    santaClausIN: new Location("Santa Claus, IN", "santaClausIN.png"),
     antlersOK: new Location("Antlers, OK", "antlersOK.png", "The Harry & Marv Playhouse", locationDetails.antlersOK),
     christmasCoveME: new Location("Christmas Cove, ME", "christmasCoveME.png", "George Bailey Amphitheater", locationDetails.christmasCoveME)
 };
@@ -179,11 +180,11 @@ var matchups = [
     new Matchup(21, artists[32], artists[32], locations.blitzenOR, 26),              
     new Matchup(22, artists[32], artists[32], locations.bethlehemPA, 27),              
     new Matchup(23, artists[32], artists[32], locations.eggnogUT, 27),              
-    new Matchup(24, artists[32], artists[32], locations.reindeerMO, 28),              
-    new Matchup(25, artists[32], artists[32], locations.reindeerMO, 28),              
+    new Matchup(24, artists[32], artists[32], locations.santaClausIN, 28),              
+    new Matchup(25, artists[32], artists[32], locations.santaClausIN, 28),              
     new Matchup(26, artists[32], artists[32], locations.antlersOK, 29),              
     new Matchup(27, artists[32], artists[32], locations.antlersOK, 29),              
-    new Matchup(28, artists[32], artists[32], locations.reindeerMO, 30),              
+    new Matchup(28, artists[32], artists[32], locations.santaClausIN, 30),              
     new Matchup(29, artists[32], artists[32], locations.antlersOK, 30),              
     new Matchup(30, artists[32], artists[32], locations.christmasCoveME, null)
 ];
