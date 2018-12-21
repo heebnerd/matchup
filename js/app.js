@@ -33,10 +33,19 @@ class Matchup {
 }
 
 class Location {
-    constructor (name, imageUrl, venue){
+    constructor (name, imageUrl, venue, details){
         this.name = name;
         this.imageUrl = "images/" + imageUrl;
-        this.venue = "venue/" + venue;
+        this.venue = venue;
+        this.details = details;
+    }
+}
+
+class LocationDetails{
+    constructor (mapImage, population, facts){
+        this.mapImage = "images/" + mapImage;
+        this.population = population;
+        this.facts = facts;
     }
 }
 
@@ -76,23 +85,78 @@ var artists = [
     new Artist("---", "", "", "-")
 ];
 
+var locationDetails = {
+    wintersTX: new LocationDetails("mapWintersTX.png", "2,562", 
+        [
+            "High School Mascot: Blizzards",
+            "Birthplace of Rogers Hornsby - April 27, 1896"
+        ]),
+    hollyMI: new LocationDetails("locationHollyMI.jpg", "6,086", 
+        [
+            "Home to the Annual Holly Dickens Festival",
+            "Also home to 'Crapo Park' named after Michigan governor Henry H. Crapo"
+        ]),
+    evergreenCO: new LocationDetails("locationEvergreenCO.jpg", "9,038",
+        [
+            "Famous current resident: Scott Hamilton",
+            "Famous previous resident: John Hinckley Jr."
+        ]),
+    poinsettiaParkFL: new LocationDetails("locationPoinsettiaParkFL.png", "???",
+        [
+            "Bus Service at Front Entrance",
+            "Shuffleboard-Social, In-house, and Competitive"
+        ]),
+    northPoleID: new LocationDetails("locationNorthPoleID.jpg", "I dunno, like 7?",
+        [
+            "The area code is 208",
+            "There pretty much isn't anything here"
+        ]),
+    blitzenOR: new LocationDetails("locationBlitzenOR.jpg", "several ghosts", [
+            "Currently a ghost town",
+            "Last living habitants were back in 1923"
+        ]),
+    bethlehemPA: new LocationDetails("locationbethlehemPA.jpg", "74,982",
+        [
+            "An accreditted instiution in this town gave Josh Heebner a college degree",
+            "Home to the Philadelphia Eagles preseason training camp"
+        ]),
+    eggnogUT: new LocationDetails("locationEggnogUT.jpg", "Probably 0",
+        [
+            "Likely named for the egg nog served to stockmen at this place",
+            "Elevation is 4,445 ft"
+        ]),
+    reindeerMO: new LocationDetails("", "", 
+        [
+
+        ]),
+    antlersOK: new LocationDetails("locationAntlersOK.jpg", "2,453", 
+        [
+            "Named for a kind of tree that becomes festooned with antlers shed by deer",
+            "The city has two motels and one hotel: Sportsman Inn & Suites, Budget Inn, and Hiway Inn & Suites"
+        ]),
+    christmasCoveME: new LocationDetails("locationChristmasCoveME.jpg", "892",
+        [
+            "It's pretty boring here"
+        ])
+}
+
 var locations = {
-    noelLA: new Location("Noel, LA", "noelLA.png", "noelLA.html"),
-    hollyMI: new Location("Holly, MI", "hollyMI.png", "Clarence Oddbody, AS2, Memorial Coliseum", "https://www.google.com/url?sa=i&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjY7Imbi6vfAhUPHHwKHZZRBSsQjRx6BAgBEAU&url=https%3A%2F%2Fwww.tumblr.com%2Ftagged%2Fclarence-odbody&psig=AOvVaw1w_tnefi1Pkqatkd7vnqO6&ust=1545281161507579"),
-    evergreenCO: new Location("Evergreen, CO", "evergreenCO.png"),
-    poinsettiaParkFL: new Location("Poinsettia Park, FL", "poinsettiaParkFL.png"),
-    northPoleID: new Location("North Pole, ID", "northPoleID.png"),
-    blitzenOR: new Location("Blitzen, OR", "blitzenOR.png"),
-    bethlehemPA: new Location("Bethlehem, PA", "bethlehemPA.png"),
-    eggnogUT: new Location("Eggnog, UT", "eggnogUT.png"),
+    wintersTX: new Location("Winters, TX", "wintersTX.png", "The Main Stage at the “Baby, It’s Cold Outside” Bar & Grille", locationDetails.wintersTX ),
+    hollyMI: new Location("Holly, MI", "hollyMI.png", "Clarence Oddbody, AS2, Memorial Coliseum", locationDetails.hollyMI),
+    evergreenCO: new Location("Evergreen, CO", "evergreenCO.png", "", locationDetails.evergreenCO),
+    poinsettiaParkFL: new Location("Poinsettia Park, FL", "poinsettiaParkFL.png", "Scot Farkus Center", locationDetails.poinsettiaParkFL),
+    northPoleID: new Location("North Pole, ID", "northPoleID.png", "Yukon Cornelius Arena", locationDetails.northPoleID),
+    blitzenOR: new Location("Blitzen, OR", "blitzenOR.png", "Cindy Lou from Whoville Theatre, featuring the Russian Teacakes Room", locationDetails.blitzenOR),
+    bethlehemPA: new Location("Bethlehem, PA", "bethlehemPA.png", "Cousin Eddie’s Palace Auditorium", locationDetails.bethlehemPA),
+    eggnogUT: new Location("Eggnog, UT", "eggnogUT.png", "The Kris Kringle Music Hall", locationDetails.eggnogUT),
     reindeerMO: new Location("Reindeer, MO", "reindeerMO.png"),
-    antlersOK: new Location("Antlers, OK", "antlersOK.png"),
-    christmasCoveME: new Location("Christmas Cove, ME", "christmasCoveME.png")
+    antlersOK: new Location("Antlers, OK", "antlersOK.png", "The Harry & Marv Playhouse", locationDetails.antlersOK),
+    christmasCoveME: new Location("Christmas Cove, ME", "christmasCoveME.png", "George Bailey Amphitheater", locationDetails.christmasCoveME)
 };
 
 var matchups = [
-    new Matchup(0, artists[0], artists[31], locations.noelLA, 16),
-    new Matchup(1, artists[15], artists[16], locations.noelLA, 16),
+    new Matchup(0, artists[0], artists[31], locations.wintersTX, 16),
+    new Matchup(1, artists[15], artists[16], locations.wintersTX, 16),
     new Matchup(2, artists[7], artists[24], locations.hollyMI, 17),
     new Matchup(3, artists[8], artists[23], locations.hollyMI, 17),
     new Matchup(4, artists[3], artists[28], locations.evergreenCO, 18),
@@ -107,7 +171,7 @@ var matchups = [
     new Matchup(13, artists[13], artists[18], locations.bethlehemPA, 22),
     new Matchup(14, artists[5], artists[26], locations.eggnogUT, 23),
     new Matchup(15, artists[10], artists[21], locations.eggnogUT, 23),    
-    new Matchup(16, artists[32], artists[32], locations.noelLA, 24),              
+    new Matchup(16, artists[32], artists[32], locations.wintersTX, 24),              
     new Matchup(17, artists[32], artists[32], locations.hollyMI, 24),              
     new Matchup(18, artists[32], artists[32], locations.evergreenCO, 25),              
     new Matchup(19, artists[32], artists[32], locations.poinsettiaParkFL, 25),              
@@ -127,6 +191,9 @@ var matchups = [
 $(document).ready(function(){
     refreshBracket();
     $(".btn-winner").click(pickWinner);
+    $("#venueModal").on("hide.bs.modal", function(){
+        $("#venueModal #locationInfo").html("");
+    });
 });
 
 function pickWinner(){
@@ -254,15 +321,18 @@ function displayMatchup(matchup){
     $("#location h3").text(matchup.location.name);
     $("#location img").attr("src", matchup.location.imageUrl);
     $("#location img").click(function(){
-        $("#locationDetails").load(matchup.location.venue);
-        $("#location").toggleClass("expand");
+        populateVenue(matchup.location);
+        $("#venueModal").modal("show");
+    });
+}
 
-        $("#venueModal img").attr("src", matchup.location.venueImage);
-        $("#venueModal .location").text(matchup.location.name);
-        $("#venueModal #venue").text(matchup.location.venue);
-        //$("#venueModal #description").html(matchup.location.description);
-
-        //$("#venueModal").modal("show");
+function populateVenue(location){
+    $("#venueModal .modal-title").text(location.name);
+    $("#venueModal #locationMap").attr("src", location.details.mapImage);
+    $("#venueModal #venueName").text(location.venue);
+    $("#venueModal #population").text(location.details.population);
+    location.details.facts.forEach(function(fact){
+        $("#venueModal #locationInfo").append(`<li>${fact}</li>`)
     });
 }
 

@@ -43,7 +43,6 @@
                             <div id="location">
                                 <img src="">
                                 <h3></h3>
-                                <div id="locationDetails"></div>
                             </div>
                             <div id="rightArtist" class="col artist p-5">
                                 <div class="image">
@@ -80,32 +79,36 @@
             </div>
         </div>
     </div>
-    <div class="modal fade" id="venueModal" tabindex="-3" role="dialog" aria-hidden="true">
-        <div class="modal-dialog modal-md" role="document">
+
+    <div class="modal fade" id="venueModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-slideout" role="document">
             <div class="modal-content">
-                <div class="modal-header text-center">
-                    <h1 class="modal-title location">Modal title</h1>
+                <div class="modal-header">
+                    <h1 class="modal-title" id="exampleModalLabel"></h1>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                        <span aria-hidden="true">×</span>
                     </button>
                 </div>
-                <div class="modal-body p-4" id="result">
-                    <div class="container-fluid h-100 matchup">
-                        <div class="row">
-                            <div class="col">
-                                <h4 id="venue"></h4>
-                                <p id="description"></p>
-                            </div>
-                            <div class="col">
-                                <img src="">
-                            </div>
-                        </div>
-                    </div>
+                <div class="modal-body">
+                    <h4>Venue:</h4>
+                    <h5 id="venueName"></h5>
+                    <hr/>
+                    <img id="locationMap" class="img-fluid" src="" />
+                    <hr/>
+                    <h5>Population: <span id="population"></span></h5>
+                    <h5>Facts:</h5>
+                    <ul id="locationInfo">
+                    </ul>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                 </div>
             </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="  crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
