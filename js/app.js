@@ -127,7 +127,7 @@ var locationDetails = {
         ]),
     santaClausIN: new LocationDetails("locationSantaClausIN.jpg", "2,411", 
         [
-            "Named in 1849. Wanted to be called Santa Fe, no one really knows how they got call Santa Claus",
+            "Named in 1849. Wanted to be called Santa Fe, no one really knows how they got to be called Santa Claus",
             "Birthplace of Jay Cutler"
         ]),
     antlersOK: new LocationDetails("locationAntlersOK.jpg", "2,453", 
@@ -150,7 +150,7 @@ var locations = {
     blitzenOR: new Location("Blitzen, OR", "blitzenOR.png", "Cindy Lou from Whoville Theatre, featuring the Russian Teacakes Room", locationDetails.blitzenOR),
     bethlehemPA: new Location("Bethlehem, PA", "bethlehemPA.png", "Cousin Eddie’s Palace Auditorium", locationDetails.bethlehemPA),
     eggnogUT: new Location("Eggnog, UT", "eggnogUT.png", "The Kris Kringle Music Hall", locationDetails.eggnogUT),
-    santaClausIN: new Location("Santa Claus, IN", "santaClausIN.png", locationDetails.santaClausIN),
+    santaClausIN: new Location("Santa Claus, IN", "santaClausIN.png", "The Harry & Marv Playhouse", locationDetails.santaClausIN),
     antlersOK: new Location("Antlers, OK", "antlersOK.png", "The Harry & Marv Playhouse", locationDetails.antlersOK),
     christmasCoveME: new Location("Christmas Cove, ME", "christmasCoveME.png", "George Bailey Amphitheater", locationDetails.christmasCoveME)
 };
