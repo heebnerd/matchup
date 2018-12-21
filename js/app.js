@@ -144,13 +144,13 @@ var locationDetails = {
 var locations = {
     wintersTX: new Location("Winters, TX", "wintersTX.png", "The Main Stage at the “Baby, It’s Cold Outside” Bar & Grille", locationDetails.wintersTX ),
     hollyMI: new Location("Holly, MI", "hollyMI.png", "Clarence Oddbody, AS2, Memorial Coliseum", locationDetails.hollyMI),
-    evergreenCO: new Location("Evergreen, CO", "evergreenCO.png", "", locationDetails.evergreenCO),
+    evergreenCO: new Location("Evergreen, CO", "evergreenCO.png", "Tiny Tim Tavern", locationDetails.evergreenCO),
     poinsettiaParkFL: new Location("Poinsettia Park, FL", "poinsettiaParkFL.png", "Scot Farkus Center", locationDetails.poinsettiaParkFL),
     northPoleID: new Location("North Pole, ID", "northPoleID.png", "Yukon Cornelius Arena", locationDetails.northPoleID),
     blitzenOR: new Location("Blitzen, OR", "blitzenOR.png", "Cindy Lou from Whoville Theatre, featuring the Russian Teacakes Room", locationDetails.blitzenOR),
     bethlehemPA: new Location("Bethlehem, PA", "bethlehemPA.png", "Cousin Eddie’s Palace Auditorium", locationDetails.bethlehemPA),
     eggnogUT: new Location("Eggnog, UT", "eggnogUT.png", "The Kris Kringle Music Hall", locationDetails.eggnogUT),
-    santaClausIN: new Location("Santa Claus, IN", "santaClausIN.png"),
+    santaClausIN: new Location("Santa Claus, IN", "santaClausIN.png", locationDetails.santaClausIN),
     antlersOK: new Location("Antlers, OK", "antlersOK.png", "The Harry & Marv Playhouse", locationDetails.antlersOK),
     christmasCoveME: new Location("Christmas Cove, ME", "christmasCoveME.png", "George Bailey Amphitheater", locationDetails.christmasCoveME)
 };
@@ -194,6 +194,9 @@ $(document).ready(function(){
     $(".btn-winner").click(pickWinner);
     $("#venueModal").on("hide.bs.modal", function(){
         $("#venueModal #locationInfo").html("");
+    });
+    $("#matchupModal").on("hide.bs.modal", function(){
+        $("#location img").unbind("click");
     });
 });
 
