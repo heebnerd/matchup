@@ -50,11 +50,11 @@ class LocationDetails{
 }
 
 var artists = [
-    new Artist("Frank Sinatra", "4HEOgBHRCExyYVeTyrXsnL", "frankSinatra.jpg", 1),
+    new Artist("Frank Sinatra", "4fzMwQLxkY6qsimuyaDqed", "frankSinatra.jpg", 1),
     new Artist("Andy Williams", "5hslUAKq9I9CG2bAulFkHN", "andyWilliams.jpg", 2),
     new Artist("Bing Crosby", "6ajihXpsHpDnIdqtBXZYGN", "bingCrosby.jpg", 3),
     new Artist("Josh Groban", "1PPunVEmMEPbLxb3ejHgaB", "joshGroban.jpg", 4),
-    new Artist("Perry Como", "2pXpURmn6zC5ZYDMms6fwa", "perryComo.jpg", 5),
+    new Artist("Perry Como", "5mKxNjNnRFpO9Muzw3Ug0u", "perryComo.jpg", 5),
     new Artist("Nat King Cole", "1l2CvcIAL1MtPbtZhh0Z77", "natKingCole.jpg", 6),
     new Artist("Jack Jones", "4K6gWgQgOgj291NOhM1yqw", "jackJones.png", 7, "loveboat.m4a"),
     new Artist("Barry Manilow", "6StbRiW6YMTHdA8wj5opCG", "barryManilow.jpg", 8),
