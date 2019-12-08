@@ -18,11 +18,11 @@
         };
     </script>
     <div id="bracket">
-        <div class="round first-round"></div>
-        <div class="round second-round"></div>
-        <div class="round third-round"></div>
-        <div class="round fourth-round"></div>
-        <div class="round final-round"></div>
+        <div class="round round-1"></div>
+        <div class="round round-2"></div>
+        <div class="round round-3"></div>
+        <div class="round round-4"></div>
+        <div class="round round-5"></div>
         <div class="round winner"></div>
     </div>
     <div class="modal fade" id="matchupModal" tabindex="-1" role="dialog" aria-hidden="true">
@@ -59,6 +59,7 @@
             </div>
         </div>
     </div>
+
     <div class="modal fade" id="winnerModal" tabindex="-1" role="dialog" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
@@ -79,6 +80,26 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="gameSelectModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Select Your Game</h5>              
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="gameSelection">Select a Game</label>
+                    <select class="form-control" id="gameSelection">
+                    </select>
+                </div>
+            </div>
+            <div class="modal-footer">
+              <button id="btn-startGame" type="button" class="btn btn-success">Let's Play</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
     <div class="modal fade" id="venueModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel3"
         aria-hidden="true">
@@ -113,7 +134,11 @@
         crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+    <script src="js/spotify-web-api.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/games/bestMaleSinger.js"></script>
+    <script src="js/games/worstSong.js"></script>
+    <script src="js/games/bestFemaleSinger.js"></script>
 </body>
 
 </html>
