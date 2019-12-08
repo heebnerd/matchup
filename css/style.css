@@ -85,7 +85,7 @@ html, body{
 .game .name{
     font-size: .95vw;
     text-shadow: 1px 1px #999;
-    padding-left: 10px;
+    padding-left: 0px;
 }
 
 .game .seed{
