@@ -68,7 +68,7 @@ var currentGame = null;
 $(document).ready(function(){
     var games = [
         bestMaleSinger,
-        bestFemaleSinger,
+        //bestFemaleSinger,
         worstSongGame
     ];
     games.forEach(function(game){
