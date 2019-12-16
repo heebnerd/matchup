@@ -67,10 +67,17 @@ var currentGame = null;
 
 $(document).ready(function(){
     var games = [
-        bestMaleSinger,
-        //bestFemaleSinger,
-        worstSongGame
+        bestMaleSinger
     ];
+
+    var today = new Date();
+    var christmas2019 = new Date("2019/12/25");
+
+    if(today > christmas2019){
+        games.push(worstSongGame);
+        games.push(bestFemaleSinger);
+    }
+
     games.forEach(function(game){
         $("#gameSelection").append(`<option data-index=${game.index}>${game.name}</option>`)
     })
