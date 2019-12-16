@@ -80,4 +80,4 @@ var matchups = [
     new Matchup(14, songs[16], songs[16], locations.spreadEagleWI, null, 4)
 ]
 
-var worstSongGame = new Game(2, "Worst Christmas Song", songs, matchups, "worstSong.js");
+var worstSongGame = new Game(1, "Worst Christmas Song", songs, matchups, "worstSong.js");
