@@ -1,10 +1,11 @@
 class Game {
-    constructor (index, name, songs, matchups, jsUrl){
+    constructor (index, name, songs, matchups, jsUrl, needsPassword){
         this.index = index;
         this.name = name;
         this.songs = songs;
         this.matchups = matchups;
         this.jsUrl = jsUrl;
+        this.needsPassword = needsPassword;
     }
 }
 
@@ -67,16 +68,41 @@ var currentGame = null;
 
 $(document).ready(function(){
     var games = [
-        bestMaleSinger
+        bestMaleSinger,
+        worstSongGame,
+        bestFemaleSinger
     ];
+    
+    $("#gameSelection").change(function(){
+        var selected = $("#gameSelection option:selected").attr("data-index");
+        var game = games[selected];
+        if(game.needsPassword){
+            $("#btn-startGame").html("Need password");
+            $("#btn-startGame").addClass("btn-warning");
+            $("#password-area").removeClass("d-none");
+            $("#btn-startGame").prop("disabled", "disabled");
+        }else{
+            $("#btn-startGame").html("Let's Play");
+            $("#btn-startGame").addClass("btn-success");
+            $("#btn-startGame").removeClass("btn-warning");
+            $("#password-area").addClass("d-none");
+            $("#btn-startGame").prop("disabled", "");
+        }
+    })
 
-    var today = new Date();
-    var christmas2019 = new Date("2019/12/25");
-
-    if(today > christmas2019){
-        games.push(worstSongGame);
-        games.push(bestFemaleSinger);
-    }
+    $("#password").on("keyup", function(){
+        if($("#password").val() === "redrider"){
+            $("#btn-startGame").removeClass("btn-warning");
+            $("#btn-startGame").html("Let's Play");
+            $("#btn-startGame").addClass("btn-success");
+            $("#btn-startGame").prop("disabled", "");
+        }
+        else{
+            $("#btn-startGame").html("Need password");
+            $("#btn-startGame").addClass("btn-warning");
+            $("#btn-startGame").prop("disabled", "disabled");
+        }
+    });
 
     games.forEach(function(game){
         $("#gameSelection").append(`<option data-index=${game.index}>${game.name}</option>`)

@@ -137,4 +137,4 @@ var matchups = [
     new Matchup(30, songs[32], songs[32], locations.christmasCoveME, null, 5)
 ]
 
-var bestMaleSinger = new Game(0, "Best Male Singer", songs, matchups, "bestMaleSinger.js");
+var bestMaleSinger = new Game(0,"Best Male Singer", songs, matchups, "bestMaleSinger.js", false);
