@@ -61,10 +61,7 @@ class LocationDetails{
     }
 }
 
-
-
 var currentGame = null;
-
 
 $(document).ready(function(){
     var games = [
@@ -72,7 +69,7 @@ $(document).ready(function(){
         worstSongGame,
         bestFemaleSinger
     ];
-    
+
     $("#gameSelection").change(function(){
         var selected = $("#gameSelection option:selected").attr("data-index");
         var game = games[selected];
@@ -120,8 +117,6 @@ $(document).ready(function(){
                 console.log(data);
             }
         });
-
-
 
         $("#gameSelectModal").modal("hide");
         var selectedIndex = $("#gameSelection option:selected").attr("data-index");
@@ -252,12 +247,15 @@ function refreshMatchup(matchup){
 function displayMatchup(matchup){
     displayArtist("left", matchup.artist1);
     displayArtist("right", matchup.artist2);
-    $("#location h3").text(matchup.location.name);
-    $("#location img").attr("src", matchup.location.imageUrl);
-    $("#location img").click(function(){
-        populateVenue(matchup.location);
-        $("#venueModal").modal("show");
-    });
+
+    if(matchup.location){
+        $("#location h3").text(matchup.location.name);
+        $("#location img").attr("src", matchup.location.imageUrl);
+        $("#location img").click(function(){
+            populateVenue(matchup.location);
+            $("#venueModal").modal("show");
+        });
+    }
 }
 
 function populateVenue(location){
