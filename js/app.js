@@ -256,6 +256,9 @@ function displayMatchup(matchup){
             $("#venueModal").modal("show");
         });
     }
+    else{
+        $("#location").addClass("d-none");
+    }
 }
 
 function populateVenue(location){

@@ -152,4 +152,4 @@ var matchups = [
     new Matchup(30, songs[32], songs[32], null, null, 5)
 ]
 
-var bestFemaleSinger = new Game(2, "Best Female Singer", songs, matchups, "bestFemaleSinger.js", true);
+var bestFemaleSinger = new Game(2, "Best Female Singer", songs, matchups, "bestFemaleSinger.js", false);
