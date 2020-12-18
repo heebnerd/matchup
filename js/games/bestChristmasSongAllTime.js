@@ -69,7 +69,7 @@ var locations = {
 
 var songs = [
     new Artist("All I Want for Christmas Is You", "0bYg9bo50gSsH3LtXe2SQn", "mariahCarey.jpg", 1),
-    new Artist("Last Christmas", "0QPYn15U8IQHKcH2LDfrek", "wham.jpg", 2),
+    new Artist("Last Christmas", "2FRnf9qhLbvw8fu4IBXx78", "wham.jpg", 2),
     new Artist("Santa Tell Me", "0lizgQ7Qw35od7CYaoMBZb", "arianaGrande.jpg", 3),
     new Artist("It's Beginning to Look a Lot Like Christmas", "5a1iz510sv2W9Dt1MvFd5R", "michaelBuble.jpg", 4),
     new Artist("Mistletoe", "32OWobmyAz8J2qA8iWekyS", "justinBieber.jpg", 5),
