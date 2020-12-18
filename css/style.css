@@ -272,7 +272,7 @@ html, body{
     content: 'X';
 }
 
-.first-round .btn-delete{
+.round-1 .btn-delete{
     display: none;
 }
 

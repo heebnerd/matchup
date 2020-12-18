@@ -67,7 +67,8 @@ $(document).ready(function(){
     var games = [
         bestMaleSinger,
         worstSongGame,
-        bestFemaleSinger
+        bestFemaleSinger,
+        bestChristmasSongAllTime
     ];
 
     $("#gameSelection").change(function(){
