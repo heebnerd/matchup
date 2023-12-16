@@ -70,4 +70,43 @@ var locations = {
                 "Home to Santa's Workshop",
                 "Since 1948 there is a 96% chance of snow on Christmas"
             ])),
+    deadHorseAK: new Location("Dead Horse, AK", "deadhorseAK.png", "Let's Not Beat a Dead Horse Amphitheater",
+        new LocationDetails("deadhorseAK.png", "28 (1990)", 
+            [
+                "Because alcoholic beverages are not sold in Deadhorse, a humorous slogan for the town is 'All that far and still no bar.'",
+                "Longest day: 63 days, 23 hours, 40 minutes",
+                "Shortest day: 45 min",
+                "Longest night: 54 days, 22 hours, 51 min",
+                "Shortest night: 26 min"
+            ])),
+    fleatownOH: new Location("Fleatown, OH", "fleatownOH.png", "Flea Circus",
+        new LocationDetails("fleatownOH.png", "100,000,000 (fleas)", 
+            [
+                "According to Frank K. Gallant(?), Fleatown may have been so named on account of its unsophisticated character.",
+                "Located in Licking County"
+            ])),
+    hellMI: new Location("Hell, MI", "hellMI.png", "Satan's Lair",
+        new LocationDetails("hellMI.png", "72", 
+            [
+                "From the town website: More people tell you to go to our town than anywhere else on Earth",
+                "Get Married in Hell: After all, a marriage that starts in Hell has no place to go but up!",
+                "An infinite supply of puns: <a href='https://gotohellmi.com' target='_blank'>gotohellmi.com</a> "
+            ])),
+    looneyvilleTX: new Location("Looneyville, TX", "looneyvilleTX.png", "The Funny Farm",
+        new LocationDetails("looneyvilleTX.png", "Dispersed", 
+            [
+                "At one point it had a gas station",
+                "It also had a 'store', but it burned down",
+            ])),
+    boogertownNC: new Location("Boogertown, NC", "boogertownNC.png", "Kleenex Field",
+        new LocationDetails("boogertownNC.png", "Don't Ask", 
+            [
+                "Moonshiners who warned that the bogeyman lurked in the forest in order to deter visitors caused the name Boogertown to be selected",
+                "You can pick your friends and you can pick your nose, but you can't pick your friend's nose (except here).",
+            ])),
+    spreadEagleWI: new Location("Spread Eagle, WI", "spreadEagleWI.png", "Streakers Bar & Grille",
+        new LocationDetails("spreadEagleWI.png", "Several", 
+            [
+                "Hard to describe Spread Eagle, but you know it when you see it",
+            ]))
 };
