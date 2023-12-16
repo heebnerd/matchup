@@ -68,7 +68,8 @@ $(document).ready(function(){
         bestMaleSinger,
         worstSongGame,
         bestFemaleSinger,
-        bestChristmasSongAllTime
+        bestChristmasSongAllTime,
+        bestContemporarySong
     ];
 
     $("#gameSelection").change(function(){

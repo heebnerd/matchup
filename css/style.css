@@ -34,7 +34,7 @@ html, body{
 .header{
     padding-top: 10%;
     text-align: center;
-    font-size: 6vh;
+    font-size: 3vw;
 }
 
 .matchup .artist:first-child{
@@ -83,7 +83,7 @@ html, body{
 }
 
 .game .name{
-    font-size: .95vw;
+    font-size: .90vw;
     text-shadow: 1px 1px #999;
     padding-left: 0px;
 }
@@ -147,8 +147,8 @@ html, body{
 }
 
 .round-2 .game{
-    height: 162px;
-    padding-top: 44px;
+    height: 166px;
+    padding-top: 45px;
 }
 .round-2 .bracket{
     height: 86px;
@@ -164,7 +164,7 @@ html, body{
 }
 
 .round-3 .game{
-    margin-bottom: 158px;
+    margin-bottom: 160px;
 }
 
 .round-3 .bracket{
