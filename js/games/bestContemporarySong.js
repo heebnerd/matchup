@@ -6,7 +6,7 @@ var songs = [
     new Artist("My Only Wish (This Year)", '0YWUHZPJVg4iujddsJDwhM', 'britneySpears.jpg', 5),
     new Artist("You Make it Feel Like Christmas", '2OQ6a4CfUeYskpTTgyawyJ', 'blake-shelton-gwen-stefani-christmas-in-rockefeller.jpg', 6),
     new Artist("Merry Christmas, Happy Holiday", '4v9WbaxW8HdjqfUiWYWsII', 'nsync.jpg', 7),
-    new Artist("All I Want for Christmas Is You", '1FRqLI971CD1QedTiJeL3c', 'michaelbuble.jpg', 8),
+    new Artist("All I Want for Christmas Is You", '1FRqLI971CD1QedTiJeL3c', 'michaelBuble.jpg', 8),
     new Artist("Christmas Tree Farm", '2mvabkN1i2gLnGAPUVdwek', 'taylorswift.jpg', 9),
     new Artist("Candy Cane Lane", '4KevTcBXEIYxXVyPE78XXm', 'sia.jpg', 10),
     new Artist("Happy Xmas", '5KHzV8Gf3aweIMImliFAOs', 'miley-cyrus-mark-ronson.jpg', 11),
