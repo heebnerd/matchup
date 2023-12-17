@@ -15,7 +15,7 @@ var songs = [
     new Artist("Baby, It's Cold Outside", '3xvFTqHmlMqKjHgczCGn2C', 'lydia_liza_joseph_lemanski.jpg', 14),
     new Artist("God Rest Ye Merry Gentlemen", '6eou298JmAGYShrwYuLxJ2', 'bnl_sarah.webp', 15),
     new Artist("The Christmas Shoes", '2P950p6RQQxCROYYZGjcBr', 'christmas_shoes.jpg', 16),
-    new Artist("Jingle Bells", '2kvXnUbRUnHS5195eyQp4a', 'laurendaigle.jpg', 17),
+    new Artist("Jingle Bells", '2kvXnUbRUnHS5195eyQp4a', 'laurenDaigle.jpg', 17),
     new Artist("River", '3yLCQ4GRSFlg3GmwlYQlzX', 'sarahMcLachlan.jpg', 18),
     new Artist("We Wish You a Merry Christmas", '1swm2Hei9tUlcohs0zj7DU', 'weezer.jpg', 19),
     new Artist("Christmas Wrapping", '1O2ymfIOPUz7RLzjDCnCWv', 'spicegirls.jpg', 20),
