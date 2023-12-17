@@ -10,12 +10,11 @@ class Game {
 }
 
 class Artist {
-    constructor (name, audio, imageUrl, seed, gagAudio){
+    constructor (name, audio, imageUrl, seed){
         this.name = name;
         this.audio = "https://open.spotify.com/embed/track/" + audio;
         this.imageUrl = "images/" + imageUrl;
         this.seed = seed;
-        this.gagAudio = "audio/" + gagAudio;
     }
 }
 
@@ -278,14 +277,6 @@ function displayArtist(selector, artist){
     $(selector + " .header").text(artist.name);
     $(selector + " .image img").attr("src", artist.imageUrl);
     $(selector + " .image img").attr("artist-name", artist.name);
-    $(selector + " .image img").on("click", function(){
-        var artistName = $(this).attr("artist-name");
-        var artist = artists.find(function(artist){
-            return artist.name == artistName;
-        });
-        var audio = new Audio(artist.gagAudio); 
-        audio.play();
-    });
     $(selector + " iframe").attr("src", artist.audio);
     $(selector + " button").attr("data-artist", artist.name);
 }
