@@ -19,7 +19,7 @@ var songs = [
     new Artist("We Wish You a Merry Christmas", '1swm2Hei9tUlcohs0zj7DU', 'weezer.jpg', 9),
     new Artist("Christmas Wrapping", '1O2ymfIOPUz7RLzjDCnCWv', 'spicegirls.jpg', 10),
     new Artist("It's the Most Wonderful Time of the Year", '1j51n0VAlLbbHWLHDAX2Ts', 'brett_eldredge.jpg', 10),
-    new Artist("It Came Upon a Midnight Clear", '040PVy5Qjz6z4IAvsLbXbn', 'josh_groban.jpg', 11),
+    new Artist("It Came Upon a Midnight Clear", '040PVy5Qjz6z4IAvsLbXbn', 'joshGroban.jpg', 11),
     new Artist("Last Christmas", '5ryjlKuQ1J5cACtZ7BdZ9z', 'meghan-trainor.jpg', 11),
     new Artist("Silent Night", '3WP3OIYgTAnfFuiQBvgzgi', 'boyz_II_men.jpg', 12),
     new Artist("Winter Wonderland", '4jbXHzjsepzaqixmuEz8r9', 'brad_pasley.jpg', 12),
