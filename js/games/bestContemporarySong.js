@@ -14,7 +14,7 @@ var songs = [
     new Artist("Sleigh Ride", '0kIVSKPygLNAEBi7EVeeJn', 'fun.jpg', 7),
     new Artist("God Rest Ye Merry Gentlemen", '6eou298JmAGYShrwYuLxJ2', 'bnl_sarah.webp', 7),
     new Artist("The Christmas Shoes", '2P950p6RQQxCROYYZGjcBr', 'christmas_shoes.jpg', 8),
-    new Artist("Jingle Bells", '2kvXnUbRUnHS5195eyQp4a', 'laurendaigle.jpg', 8),
+    new Artist("Jingle Bells", '2kvXnUbRUnHS5195eyQp4a', 'laurenDaigle.jpg', 8),
     new Artist("River", '3yLCQ4GRSFlg3GmwlYQlzX', 'sarahMcLachlan.jpg', 9),
     new Artist("We Wish You a Merry Christmas", '1swm2Hei9tUlcohs0zj7DU', 'weezer.jpg', 9),
     new Artist("Christmas Wrapping", '1O2ymfIOPUz7RLzjDCnCWv', 'spicegirls.jpg', 10),
