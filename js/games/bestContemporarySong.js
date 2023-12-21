@@ -23,7 +23,7 @@ var songs = [
     new Artist("Last Christmas", '5ryjlKuQ1J5cACtZ7BdZ9z', 'meghan-trainor.jpg', 11),
     new Artist("Silent Night", '3WP3OIYgTAnfFuiQBvgzgi', 'boyz_II_men.jpg', 12),
     new Artist("Winter Wonderland", '4jbXHzjsepzaqixmuEz8r9', 'brad_pasley.jpg', 12),
-    new Artist("It's Begining to Look a Lot Like Christmas", '70y9Vle659GH7TI0w6RraH', 'harry_connick_jr.jpg', 13),
+    new Artist("It's Begining to Look a Lot Like Christmas", '70y9Vle659GH7TI0w6RraH', 'harryConnickJr.jpg', 13),
     new Artist("What Are You Doing New Year's Eve?", '0SZim5k1ypcgRsWmFcrGfs', 'the_head_and_the_heart.jpg', 13),
     new Artist("Mele Kalikimaka", '0aVZwOMLntqrkth0DBo5An', 'jimmy_buffet.jpg', 14),
     new Artist("Silver Bells", '1cvLCD35IsBkJ9QuufIrXK', 'lady_a.webp', 14),
