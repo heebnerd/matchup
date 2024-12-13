@@ -68,4 +68,4 @@ var matchups = [
     new Matchup(30, songs[32], songs[32], null, null, 5)
 ]
 
-var bestContemporarySong = new Game(4, "[NEW] Best Contemporary Christmas Song", songs, matchups, "bestContemporarySong.js", false);
+var bestContemporarySong = new Game(4, "Best Contemporary Christmas Song", songs, matchups, "bestContemporarySong.js", false);
