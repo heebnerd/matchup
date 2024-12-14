@@ -109,7 +109,7 @@ $(document).ready(function(){
     $("#gameSelectModal").modal("show");
     $("#btn-startGame").click(function(){
         var accessToken = "452f9a713fd84642a11e1450e716d1a6";
-        $.ajax({
+        /*$.ajax({
             url: 'https://api.spotify.com/v1/browse/new-releases',
             type: 'GET',
             headers: {
@@ -118,7 +118,7 @@ $(document).ready(function(){
             success: function(data) {
                 console.log(data);
             }
-        });
+        });*/
 
         $("#gameSelectModal").modal("hide");
         var selectedIndex = $("#gameSelection option:selected").attr("data-index");
