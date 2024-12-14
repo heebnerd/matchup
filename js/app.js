@@ -278,6 +278,6 @@ function displayArtist(selector, artist){
     $(selector + " .header").text(artist.name);
     $(selector + " .image img").attr("src", artist.imageUrl);
     $(selector + " .image img").attr("artist-name", artist.name);
-    //$(selector + " iframe").attr("src", artist.audio);
+    $(selector + " iframe").attr("src", artist.audio);
     $(selector + " button").attr("data-artist", artist.name);
 }
