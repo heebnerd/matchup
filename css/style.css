@@ -32,9 +32,10 @@ html, body{
 }
 
 .header{
-    padding-top: 10%;
+    padding-top: 5%;
     text-align: center;
     font-size: 3vw;
+    padding: 2% 14%;
 }
 
 .matchup .artist:first-child{
@@ -47,7 +48,7 @@ html, body{
 
 .image{
     text-align: center;
-    padding-top: 10%;
+    padding-top: 5%;
 }
 .image img{
     height: 20vw;
