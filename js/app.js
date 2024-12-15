@@ -10,11 +10,18 @@ class Game {
 }
 
 class Artist {
-    constructor (name, audio, imageUrl, seed){
+    constructor (name, audio, imageUrl, seed, platform){
         this.name = name;
-        this.audio = "https://open.spotify.com/embed/track/" + audio;
         this.imageUrl = "images/" + imageUrl;
         this.seed = seed;
+        this.platform = platform;
+
+        if(platform == "apple")
+            this.audio = "https://embed.music.apple.com/us/" + audio;
+        else{
+            this.platform = "spotify";
+            this.audio = "https://open.spotify.com/embed/track/" + audio;
+        }
     }
 }
 
@@ -108,18 +115,6 @@ $(document).ready(function(){
     })
     $("#gameSelectModal").modal("show");
     $("#btn-startGame").click(function(){
-        var accessToken = "452f9a713fd84642a11e1450e716d1a6";
-        /*$.ajax({
-            url: 'https://api.spotify.com/v1/browse/new-releases',
-            type: 'GET',
-            headers: {
-                'Authorization' : 'Bearer ' + accessToken
-            },
-            success: function(data) {
-                console.log(data);
-            }
-        });*/
-
         $("#gameSelectModal").modal("hide");
         var selectedIndex = $("#gameSelection option:selected").attr("data-index");
         var game = games[selectedIndex];

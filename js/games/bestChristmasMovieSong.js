@@ -1,21 +1,21 @@
 var songs = [
-    new Artist("White Christmas", '3XsaSIPWvM61RIFfeb0BBR', "white_christmas.jpg", 1),
-    new Artist("Rockin' Around The Christmas Tree", '2EjXfH91m7f8HiJN1yQg97', 'home_along_rockin.png', 1),
-    new Artist("Christmas Time is Here", '3bMfUUpzUzqWp9II00yRhE', 'charlie_brown_christmas.jpg', 2),
-    new Artist("Have Yourself a Merry Little Christmas", '030mot3ZKR3oskfMsqDB2R', 'have_yourself_a_merry_little_christmas.jpg', 2),
-    new Artist("Christmas in Hollis", '41onDks2UPbyjer5fMeUWf', 'christmas_in_hollis.webp', 3),
-    new Artist("I'll Be Home for Christmas", '4lftz0V8DZhWSVtL4GrzMH', 'ill_be_home_for_christmas.jpg', 3),
-    new Artist("You're a Mean One, Mr. Grinch", '4qP2V09IpTct5A1ZSnr1zh', 'youre_a_mean_one_mr_grinch.jpg', 4),
-    new Artist("Silver and Gold", '5EmYSWE2LpTd4hXxPYdbSf', 'silver_and_gold.png', 4),
-    new Artist("A Holly Jolly Christmas", '6Z9Srb3uyZ6ffQaYVSIgTO', 'holly_jolly_christmas.webp', 5),
-    new Artist("Rudolph the Red-Nosed Reindeer", '4yY65EIhsp9Yijw8e4wFbm', 'rudolph_the_red_nosed_reindeer.webp', 5),
-    new Artist("Christmas Vacation Theme", '0X6P2uxxWYfiuq6PnyOEjL', 'christmas_vacation.jpg', 6),
-    new Artist("Walking in the Air", '6WIPdAfs8ZIBMIE3XYIijs', 'walking_in_the_air.avif', 6),
-    new Artist("Wonderful Christmas Time", '4UoPux0RniULIV6eFrNphL', 'wonderful_christmastime.jpg', 7),
-    new Artist("Frosty the Snowman", '3q8tJKCvgzBAjQDo088EwQ', 'Frosty-the-snowman.webp', 7),
-    new Artist("Silver Bells", '5Vo6qsNSZY7hwVZHHc4ouK', 'lemon_drop_kid.avif', 8),
-    new Artist("Santa Claus is Comin' to Town", '1nz5Wv0Jeg2KoxKyEB9S3R', 'santa_claus_comin_to_town.jpg', 8),
-    new Artist("---", "", "", "-")
+    new Artist("White Christmas", 'album/white-christmas/1425234668?i=1425235073', 'white_christmas.jpg', 1, 'apple'),
+    new Artist("Rockin' Around The Christmas Tree", 'album/rockin-around-the-christmas-tree-single/1444032014?i=1444032015', 'home_along_rockin.png', 1, 'apple'),
+    new Artist("Christmas Time is Here", 'album/christmas-time-is-here-vocal-version/1440948781?i=1440949308', 'charlie_brown_christmas.jpg', 2, 'apple'),
+    new Artist("Have Yourself a Merry Little Christmas", 'album/have-yourself-a-merry-little-christmas/1434926110?i=1434927132', 'have_yourself_a_merry_little_christmas.jpg', 2, 'apple'),
+    new Artist("Christmas in Hollis", 'album/christmas-in-hollis/1498287826?i=1498288002', 'christmas_in_hollis.webp', 3, 'apple'),
+    new Artist("I'll Be Home for Christmas", 'album/ill-be-home-for-christmas/1425234668?i=1425235084', 'll_be_home_for_christmas.jpg', 3, 'apple'),
+    new Artist("You're a Mean One, Mr. Grinch", 'album/youre-a-mean-one-mr-grinch/1440922667?i=1440922974', 'youre_a_mean_one_mr_grinch.jpg', 4, 'apple'),
+    new Artist("Silver and Gold", 'album/silver-and-gold/1440814412?i=1440815057', 'silver_and_gold.png', 4, 'apple'),
+    new Artist("A Holly Jolly Christmas", 'album/a-holly-jolly-christmas-single-version/1444213347?i=1444213351', 'holly_jolly_christmas.webp', 5, 'apple'),
+    new Artist("Rudolph the Red-Nosed Reindeer", 'album/rudolph-the-red-nosed-reindeer-feat-videocraft-chorus/1440814412?i=1440815080', 'rudolph_the_red_nosed_reindeer.webp', 5, 'apple'),
+    new Artist("Christmas Vacation Theme", 'album/christmas-vacation-from-national-lampoons-christmas/1045184251?i=1045184439', 'christmas_vacation.jpg', 6, 'apple'),
+    new Artist("Walking in the Air", 'album/walking-in-the-air-the-story-of-the-snowman-edit/1652084750?i=1652084764', 'walking_in_the_air.avif', 6, 'apple'),
+    new Artist("Wonderful Christmas Time", 'album/wonderful-christmastime-full-length-version/1440953750?i=1440953990', 'wonderful_christmastime.jpg', 7, 'apple'),
+    new Artist("Frosty the Snowman", 'album/frosty-the-snowman/1472696616?i=1472696632', 'Frosty-the-snowman.webp', 7, 'apple'),
+    new Artist("Silver Bells", 'album/silver-bells/485227380?i=485227388', 'lemon_drop_kid.avif', 8, 'apple'),
+    new Artist("Santa Claus is Comin' to Town", 'album/santa-claus-is-comin-to-town-from-the-rankin-bass/1710256481?i=1710256812', 'santa_claus_comin_to_town.jpg', 8, 'apple'),    
+    new Artist("---", "", "", "-", "")
 ];
 
 
