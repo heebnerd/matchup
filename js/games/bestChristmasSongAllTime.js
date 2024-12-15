@@ -1,23 +1,22 @@
 var songs = [
-    new Artist("All I Want for Christmas Is You", "0bYg9bo50gSsH3LtXe2SQn", "mariahCarey.jpg", 1),
-    new Artist("Last Christmas", "2FRnf9qhLbvw8fu4IBXx78", "wham.jpg", 2),
-    new Artist("Santa Tell Me", "0lizgQ7Qw35od7CYaoMBZb", "arianaGrande.jpg", 3),
-    new Artist("It's Beginning to Look a Lot Like Christmas", "5a1iz510sv2W9Dt1MvFd5R", "michaelBuble.jpg", 4),
-    new Artist("Mistletoe", "32OWobmyAz8J2qA8iWekyS", "justinBieber.jpg", 5),
-    new Artist("It's the Most Wonderful Time of the Year", "5hslUAKq9I9CG2bAulFkHN", "andyWilliams.jpg", 6),
-    new Artist("Rockin' Around the Christmas Tree", "1XBc4r6ltXjkFJBrsttwIF", "brendaLee.jpg", 7),
-    new Artist("Jingle Bell Rock", "7vQbuQcyTflfCIOu3Uzzya", "bobbyHelms.png", 8),
-    new Artist("Do They Know It's Christmas?", "0247StOpd3AkeBQzANX4Zf", "bandAid.jpeg", 9),
-    new Artist("Let it Snow! Let it Snow! Let it Snow!", "2uFaJJtFpPDc5Pa95XzTvg", "deanMartin.jpg", 10),
-    new Artist("Happy Xmas (War Is Over)", "27RYrbL6S02LNVhDWVl38b", "johnLennon.jpeg", 11),
-    new Artist("White Christmas", "4so0Wek9Ig1p6CRCHuINwW", "bingCrosby.jpg", 12),
-    new Artist("Feliz Navidad", "0oPdaY4dXtc3ZsaG17V972", "joseFeliciano.jpg", 13),
-    new Artist("Holly Jolly Christmas", "77khP2fIVhSW23NwxrRluh", "burlIves.jpg", 14),
-    new Artist("Driving Home for Christmas", "3Z3QhZAZpqwZa1phsbQ3JZ", "chrisRea.jpeg", 15),
-    new Artist("The Christmas Song", "4PS1e8f2LvuTFgUs1Cn3ON", "natKingCole.jpg", 16),
+    new Artist("All I Want for Christmas Is You", 'album/all-i-want-for-christmas-is-you/585972750?i=585972803', 'mariahCarey.jpg', 1, 'apple'),
+    new Artist("Last Christmas", 'album/last-christmas-single-version/202117886?i=202117984', 'wham.jpg', 2, 'apple'),
+    new Artist("Santa Tell Me", 'album/santa-tell-me/1444319981?i=1444319982', 'arianaGrande.jpg', 3, 'apple'),
+    new Artist("It's Beginning to Look a Lot Like Christmas", 'album/its-beginning-to-look-a-lot-like-christmas/1782947583?i=1782947584', 'michaelBuble.jpg', 4, 'apple'),
+    new Artist("Mistletoe", 'album/mistletoe/1440640693?i=1440640717', 'justinBieber.jpg', 5, 'apple'),
+    new Artist("It's the Most Wonderful Time of the Year", 'album/its-the-most-wonderful-time-of-the-year/171434474?i=171434594', 'andyWilliams.jpg', 6, 'apple'),
+    new Artist("Rockin' Around the Christmas Tree", 'album/rockin-around-the-christmas-tree/1442732091?i=1442732095', 'brendaLee.jpg', 7, 'apple'),
+    new Artist("Jingle Bell Rock", 'album/jingle-bell-rock/1358462130?i=1358462132', 'bobbyHelms.png', 8, 'apple'),
+    new Artist("Do They Know It's Christmas?", 'album/do-they-know-its-christmas-original-1984-version/1445001415?i=1445001424', 'bandAid.jpeg', 9, 'apple'),
+    new Artist("Let it Snow! Let it Snow! Let it Snow!", 'album/let-it-snow-let-it-snow-let-it-snow/724322340?i=724322860', 'deanMartin.jpg', 10, 'apple'),
+    new Artist("Happy Xmas ", 'album/happy-xmas-war-is-over-the-ultimate-mix/1527740882?i=1527742022', 'johnLennon.jpeg', 11, 'apple'),
+    new Artist("White Christmas", 'album/white-christmas/1425234668?i=1425235073', 'bingCrosby.jpg', 12, 'apple'),
+    new Artist("Feliz Navidad", 'album/feliz-navidad/255615877?i=255615879', 'joseFeliciano.jpg', 13, 'apple'),
+    new Artist("Holly Jolly Christmas", 'album/a-holly-jolly-christmas-single-version/1444213347?i=1444213351', 'burlIves.jpg', 14, 'apple'),
+    new Artist("Driving Home for Christmas", 'album/driving-home-for-christmas/64807098?i=64807078', 'chrisRea.jpeg', 15, 'apple'),
+    new Artist("The Christmas Song", 'album/the-christmas-song-merry-christmas-to-you/1435551048?i=1435551062', 'natKingCole.jpg', 16, 'apple'),
     new Artist("---", "", "", "-")
-];
-
+]
 
 var matchups = [
     new Matchup(0, songs[0], songs[15], locations.wintersTX, 8, 1),
