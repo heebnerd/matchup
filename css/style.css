@@ -236,12 +236,12 @@ html, body{
 #winnerModal .header{
     padding-top: 2%;
     text-align: center;
-    font-size: 10vh;
+    font-size: 5vh;
 }
 
 #winnerModal h1{
     animation:blinkingText 1.0s infinite;
-    font-size: 60pt;
+    font-size: 50pt;
 }
 
 @keyframes blinkingText{
